@@ -17,9 +17,9 @@ const brands = [
 
 export default function PremiumTrustedBrands() {
   return (
-    <section className="py-16 lg:py-20 bg-slate-950 border-y border-slate-900/60 overflow-hidden relative">
+    <section className="py-16 lg:py-20 bg-white border-y border-slate-200/60 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-[11px] text-slate-500 font-bold tracking-[0.25em] uppercase mb-12">
+        <p className="text-center text-[11px] text-slate-700 font-bold tracking-[0.25em] uppercase mb-12">
           Engineered Integrations & Global Ecosystem Alignment
         </p>
 
@@ -37,10 +37,9 @@ export default function PremiumTrustedBrands() {
             {brands.map((brand, index) => (
               <div
                 key={index}
-                className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-700 hover:text-slate-500 transition-colors cursor-default select-none font-sans"
+                className="text-2xl md:text-3xl font-extrabold tracking-tight text-blue-600 hover:text-blue-700 transition-colors cursor-default select-none font-sans"
               >
                 {brand}
-                <span className="text-blue-500/40">.</span>
               </div>
             ))}
           </motion.div>

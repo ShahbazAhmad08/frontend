@@ -10,20 +10,20 @@ const PortfolioProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`flex flex-col lg:flex-row ${isReverse ? "lg:flex-row-reverse" : ""} gap-10 lg:gap-14 items-center bg-slate-900/20 backdrop-blur-md border border-slate-900 rounded-[32px] p-6 lg:p-8 hover:border-slate-800 transition-all duration-300 shadow-xl group`}
+      className={`flex flex-col lg:flex-row ${isReverse ? "lg:flex-row-reverse" : ""} gap-10 lg:gap-14 items-center bg-slate-50/20 backdrop-blur-md border border-slate-200 rounded-[32px] p-6 lg:p-8 hover:border-slate-300 transition-all duration-300 shadow-xl group`}
     >
       {/* Content Architecture */}
       <div className="w-full lg:w-[65%] flex flex-col justify-between h-full">
         <div>
-          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-500/5 border border-blue-500/10">
+          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-500/5 border border-blue-500/10">
             {project.category}
           </span>
 
-          <h3 className="text-2xl lg:text-3xl font-bold tracking-tight text-white mt-4 group-hover:text-blue-400 transition-colors">
+          <h3 className="text-2xl lg:text-3xl font-bold tracking-tight text-black mt-4 group-hover:text-blue-600 transition-colors">
             {project.title}
           </h3>
 
-          <p className="text-slate-400 mt-4 text-sm lg:text-base leading-relaxed">
+          <p className="text-slate-600 mt-4 text-sm lg:text-base leading-relaxed">
             {project.description}
           </p>
 
@@ -32,12 +32,12 @@ const PortfolioProjectCard = ({ project, index }) => {
             {project.stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-slate-950/60 border border-slate-900 rounded-xl p-3 md:p-4 text-left shadow-inner"
+                className="bg-white/60 border border-slate-200 rounded-xl p-3 md:p-4 text-left shadow-inner"
               >
-                <h4 className="text-lg md:text-xl font-bold tracking-tight text-white">
+                <h4 className="text-lg md:text-xl font-bold tracking-tight text-black">
                   {stat.value}
                 </h4>
-                <p className="text-[10px] md:text-xs text-slate-500 tracking-wide font-medium mt-1 uppercase">
+                <p className="text-[10px] md:text-xs text-slate-700 tracking-wide font-medium mt-1 uppercase">
                   {stat.label}
                 </p>
               </div>
@@ -64,7 +64,7 @@ const PortfolioProjectCard = ({ project, index }) => {
 
       {/* Image Node Frame */}
       <div className="w-full lg:w-[35%]">
-        <div className="overflow-hidden rounded-2xl border border-slate-900 bg-slate-950/80 aspect-video lg:aspect-square flex items-center justify-center p-4 group-hover:border-slate-800 transition-colors">
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white/80 aspect-video lg:aspect-square flex items-center justify-center p-4 group-hover:border-slate-300 transition-colors">
           <img
             src={project.image}
             alt={project.title}

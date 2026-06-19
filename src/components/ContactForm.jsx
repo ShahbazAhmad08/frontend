@@ -8,7 +8,7 @@ const ContactForm = ({ cardClass, fadeUp }) => {
 
   // High-end input styling class variable
   const inputClass =
-    "w-full bg-slate-950/40 border border-slate-800/80 text-slate-100 rounded-xl px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/30 font-medium text-sm";
+    "w-full bg-slate-50 border border-slate-300 text-black rounded-xl px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600/30 font-medium text-sm";
 
   return (
     <motion.div variants={fadeUp} className={cardClass}>
@@ -16,10 +16,10 @@ const ContactForm = ({ cardClass, fadeUp }) => {
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 blur-[60px] rounded-full pointer-events-none" />
 
       <div className="mb-8 relative z-10">
-        <span className="text-xs font-bold tracking-widest text-blue-400 uppercase">
+        <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">
           Schedule a Free Consultation
         </span>
-        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-white mt-2">
+        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-black mt-2">
           Let's Talk About Your Project
         </h2>
       </div>
@@ -43,17 +43,17 @@ const ContactForm = ({ cardClass, fadeUp }) => {
 
         <div className="relative">
           <select
-            className={`${inputClass} appearance-none cursor-pointer text-slate-300`}
+            className={`${inputClass} appearance-none cursor-pointer text-slate-600`}
           >
-            <option className="bg-slate-900 text-slate-400">
+            <option className="bg-white text-slate-600">
               Preferred Connection Mode
             </option>
-            <option className="bg-slate-900 text-slate-200">Phone Call</option>
-            <option className="bg-slate-900 text-slate-200">WhatsApp</option>
-            <option className="bg-slate-900 text-slate-200">Email</option>
-            <option className="bg-slate-900 text-slate-200">Google Meet</option>
+            <option className="bg-white text-slate-900">Phone Call</option>
+            <option className="bg-white text-slate-900">WhatsApp</option>
+            <option className="bg-white text-slate-900">Email</option>
+            <option className="bg-white text-slate-900">Google Meet</option>
           </select>
-          <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500">
+          <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400">
             <span className="text-[10px]">▼</span>
           </div>
         </div>
@@ -65,11 +65,11 @@ const ContactForm = ({ cardClass, fadeUp }) => {
         />
 
         {/* Cloudflare Turnstile Verification */}
-        <div className="border border-slate-900 bg-slate-950/60 rounded-xl p-3.5 flex justify-center items-center backdrop-blur-md">
+        <div className="border border-slate-200 bg-slate-50 rounded-xl p-3.5 flex justify-center items-center backdrop-blur-md">
           <Turnstile
             siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
             onSuccess={(token) => setToken(token)}
-            options={{ theme: "dark" }}
+            options={{ theme: "light" }}
           />
         </div>
 

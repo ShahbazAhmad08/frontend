@@ -10,7 +10,7 @@ export default function ServicePage({ data }) {
   if (!data) return null;
 
   return (
-    <main className="overflow-hidden bg-slate-950 min-h-screen text-slate-100 selection:bg-blue-500/20 selection:text-blue-300">
+    <main className="overflow-hidden bg-white min-h-screen text-black selection:bg-blue-500/20 selection:text-blue-600">
       {/* 01. HERO (Mounts instantly at top-of-fold) */}
       <ServiceHero data={data.hero} />
 

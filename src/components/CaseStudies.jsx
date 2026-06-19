@@ -41,7 +41,7 @@ export default function PremiumCaseStudies() {
   };
 
   return (
-    <section className="relative py-28 lg:py-36 bg-slate-950 text-slate-100 overflow-hidden">
+    <section className="relative py-28 lg:py-36 bg-white text-black overflow-hidden">
       {/* Background Subtle Gradient Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none" />
 
@@ -52,7 +52,7 @@ export default function PremiumCaseStudies() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full"
+            className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full"
           >
             Case Studies
           </motion.span>
@@ -62,7 +62,7 @@ export default function PremiumCaseStudies() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight"
+            className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-tight"
           >
             Success Stories Engineered to Convert
           </motion.h2>
@@ -81,11 +81,11 @@ export default function PremiumCaseStudies() {
               key={project.title}
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="group relative rounded-[24px] bg-slate-900/30 border border-slate-900 overflow-hidden hover:border-slate-800 transition-all duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.3)] flex flex-col h-full"
+              className="group relative rounded-[24px] bg-slate-50/30 border border-slate-200 overflow-hidden hover:border-slate-300 transition-all duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.3)] flex flex-col h-full"
             >
               {/* IMAGE WRAPPER WITH CINEMATIC HOVER */}
-              <div className="relative h-64 overflow-hidden bg-slate-950">
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60 z-10" />
+              <div className="relative h-64 overflow-hidden bg-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60 z-10" />
                 <img
                   src={project.image}
                   alt={project.title}
@@ -93,7 +93,7 @@ export default function PremiumCaseStudies() {
                 />
 
                 {/* Embedded High-End Action Indicator */}
-                <div className="absolute top-4 right-4 z-20 h-10 w-10 rounded-full bg-slate-900/80 border border-slate-800 backdrop-blur-md flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-300">
+                <div className="absolute top-4 right-4 z-20 h-10 w-10 rounded-full bg-slate-50/80 border border-slate-300 backdrop-blur-md flex items-center justify-center text-slate-600 group-hover:text-white group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-300">
                   <ArrowUpRight
                     size={18}
                     className="transform group-hover:rotate-45 transition-transform duration-300"
@@ -104,10 +104,10 @@ export default function PremiumCaseStudies() {
               {/* CARD INTERIOR CONTENT */}
               <div className="p-7 flex flex-col flex-grow justify-between">
                 <div>
-                  <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest block mb-1">
+                  <span className="text-[11px] font-semibold text-slate-700 uppercase tracking-widest block mb-1">
                     {project.category}
                   </span>
-                  <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-2xl font-bold tracking-tight text-black group-hover:text-blue-600 transition-colors">
                     {project.title}
                   </h3>
 
@@ -116,9 +116,9 @@ export default function PremiumCaseStudies() {
                     {project.stats.map((stat) => (
                       <div
                         key={stat}
-                        className="text-xs font-semibold tracking-wide text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-xl flex items-center gap-1 shadow-inner"
+                        className="text-xs font-semibold tracking-wide text-emerald-600 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-xl flex items-center gap-1 shadow-inner"
                       >
-                        <span className="h-1 w-1 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="h-1 w-1 rounded-full bg-emerald-600 animate-pulse" />
                         {stat}
                       </div>
                     ))}
@@ -126,9 +126,9 @@ export default function PremiumCaseStudies() {
                 </div>
 
                 {/* VISUALIZED LOWER FOOTER BUTTON */}
-                <div className="mt-8 pt-5 border-t border-slate-900/60 flex items-center justify-between text-sm font-medium text-slate-400 group-hover:text-white transition-colors">
+                <div className="mt-8 pt-5 border-t border-slate-200/60 flex items-center justify-between text-sm font-medium text-slate-600 group-hover:text-black transition-colors">
                   <span>View Full Analysis</span>
-                  <span className="text-xs font-mono text-slate-400 group-hover:text-blue-400 transition-colors">
+                  <span className="text-xs font-mono text-slate-600 group-hover:text-blue-600 transition-colors">
                     CASE_ST_002
                   </span>
                 </div>

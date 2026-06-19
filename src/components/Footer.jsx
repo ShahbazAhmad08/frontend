@@ -6,18 +6,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-slate-950 border-t border-slate-900 text-slate-200 py-20 lg:py-24 overflow-hidden">
+    <footer className="relative bg-black border-t border-slate-200 text-slate-800 py-20 lg:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           {/* Brand Engine block */}
           <div className="lg:col-span-5 max-w-sm">
             <Link to="/" className="flex items-center gap-2 group">
-              <span className="h-2.5 w-2.5 rounded-full bg-blue-500 group-hover:scale-125 transition-transform" />
-              <h3 className="text-xl font-bold tracking-tight text-white">
-                Nazra<span className="text-blue-400">.</span>
-              </h3>
+              <img src="/logo.png" alt="Nazra Logo" className="h-20 w-20" />
             </Link>
-            <p className="mt-5 text-xs md:text-sm text-slate-400 leading-relaxed">
+            <p className="mt-5 text-xs md:text-sm text-slate-200 leading-relaxed">
               An architectural full-suite digital agency crafting modern node
               ecosystems, structural web systems, organic growth solutions, and
               clean computational transformations globally.
@@ -38,10 +35,10 @@ export default function Footer() {
 
           {/* Links System Module */}
           <div className="lg:col-span-2 lg:col-start-7">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-gray-50 mb-4">
               Core specializations
             </h4>
-            <ul className="space-y-2.5 text-xs md:text-sm text-slate-400 font-medium">
+            <ul className="space-y-2.5 text-xs md:text-sm text-slate-300 font-medium">
               {[
                 "Search Optimization",
                 "Paid System Campaigns",
@@ -61,10 +58,10 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-50 mb-4">
               Internal Node
             </h4>
-            <ul className="space-y-2.5 text-xs md:text-sm text-slate-400 font-medium">
+            <ul className="space-y-2.5 text-xs md:text-sm text-slate-300 font-medium">
               {[
                 "About Infrastructure",
                 "Product Portfolio",
@@ -73,7 +70,7 @@ export default function Footer() {
                 <li key={link}>
                   <a
                     href="#"
-                    className="hover:text-blue-400 inline-block transition-transform duration-200 hover:translate-x-1"
+                    className="hover:text-blue-600 inline-block transition-transform duration-200 hover:translate-x-1"
                   >
                     {link}
                   </a>
@@ -83,14 +80,12 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-50 mb-4">
               Secure Communications
             </h4>
-            <ul className="space-y-2.5 text-xs md:text-sm text-slate-400 font-medium">
-              <li className="text-white font-semibold">
-                info@nazrasoftware.com
-              </li>
-              <li className="text-slate-500 text-xs mt-1 border-t border-slate-900 pt-2 tracking-wide font-mono">
+            <ul className="space-y-2.5 text-xs md:text-sm text-slate-300 font-medium">
+              <li className=" font-semibold">info@nazrasoftware.com</li>
+              <li className="text-slate-300 text-xs mt-1 border-t border-slate-200 pt-2 tracking-wide font-mono">
                 +91 94496 17399
               </li>
             </ul>
@@ -98,7 +93,7 @@ export default function Footer() {
         </div>
 
         {/* Dynamic Absolute Base Tag */}
-        <div className="border-t border-slate-900 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+        <div className="border-t border-slate-200 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-300">
           <div>
             © {currentYear} Nazra Software Solutions. All rights reserved.
             Registered private cluster architecture.
@@ -106,15 +101,15 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a
               href="#"
-              className="hover:text-slate-400 flex items-center gap-0.5"
+              className="hover:text-slate-50 flex items-center gap-0.5"
             >
               <span>Privacy Node</span>
               <ArrowUpRight size={10} />
             </a>
-            <span className="text-slate-800">|</span>
+            <span className="text-slate-100">|</span>
             <a
               href="#"
-              className="hover:text-slate-400 flex items-center gap-0.5"
+              className="hover:text-slate-50 flex items-center gap-0.5"
             >
               <span>Terms of Operation</span>
               <ArrowUpRight size={10} />

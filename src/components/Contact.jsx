@@ -18,10 +18,10 @@ const PremiumContact = () => {
 
   // Re-engineered card design system utilizing precise internal box shadows and ambient neon borders
   const cardClass =
-    "bg-slate-900/40 backdrop-blur-xl border border-slate-900 rounded-[28px] p-6 lg:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-slate-800 transition-all duration-300 relative overflow-hidden group";
+    "bg-slate-50 backdrop-blur-xl border border-slate-200 rounded-[28px] p-6 lg:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-slate-300 transition-all duration-300 relative overflow-hidden group";
 
   return (
-    <section className="relative py-28 lg:py-36 bg-slate-950 text-slate-100 overflow-hidden">
+    <section className="relative py-28 lg:py-36 bg-white text-black overflow-hidden">
       {/* Decorative High-End Core Lighting Orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 blur-[140px] rounded-full pointer-events-none mix-blend-screen" />
 
@@ -32,7 +32,7 @@ const PremiumContact = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block"
+            className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 bg-blue-500/5 border border-blue-500/20 px-4 py-1.5 rounded-full inline-block"
           >
             Connect With Us
           </motion.span>
@@ -41,7 +41,7 @@ const PremiumContact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight"
+            className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-black leading-tight"
           >
             Let's Build Something Exceptional Together
           </motion.h2>

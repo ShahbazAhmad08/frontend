@@ -27,17 +27,17 @@ const reviews = [
 
 export default function PremiumTestimonials() {
   return (
-    <section className="relative py-28 lg:py-36 bg-slate-950 text-slate-100 overflow-hidden">
+    <section className="relative py-28 lg:py-36  bg-slate-100 text-slate-950 overflow-hidden">
       {/* Structural Ambient Background Light */}
       <div className="absolute top-1/2 left-1/4 w-[600px] h-[300px] bg-blue-500/[0.02] blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* SECTION HEADER */}
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 bg-gray-600/30 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block">
             Verified Outcomes
           </span>
-          <h2 className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-blue-400 leading-tight">
             Trusted by Leaders at High-Velocity Brands
           </h2>
         </div>
@@ -52,15 +52,15 @@ export default function PremiumTestimonials() {
               viewport={{ once: true, margin: "-20px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -6 }}
-              className="bg-slate-900/30 backdrop-blur-md border border-slate-900 rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:border-slate-800 transition-all duration-300 shadow-2xl relative group"
+              className="bg-transparent backdrop-blur-md rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:border-slate-800 transition-all duration-300 shadow-2xl relative group"
             >
               <Quote
-                className="absolute top-6 right-6 text-slate-800/60 pointer-events-none"
+                className="absolute top-6 right-6 text-black pointer-events-none"
                 size={32}
                 strokeWidth={1}
               />
 
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed font-medium relative z-10">
+              <p className="text-slate-900 text-sm md:text-base leading-relaxed font-medium relative z-10">
                 "{review.review}"
               </p>
 
@@ -71,13 +71,13 @@ export default function PremiumTestimonials() {
                     .map((n) => n[0])
                     .join("")}
                 </div>
-                <div>
-                  <h4 className="font-bold text-sm text-white group-hover:text-blue-400 transition-colors">
+                <div className="cursor-pointer">
+                  <h4 className="font-bold text-sm text-blue-600 group-hover:text-blue-400 transition-colors">
                     {review.name}
                   </h4>
-                  <p className="text-[11px] text-slate-500 font-medium tracking-wide mt-0.5">
+                  <p className="text-[11px] text-slate-600 font-medium tracking-wide mt-0.5">
                     {review.role} ·{" "}
-                    <span className="text-slate-400">{review.company}</span>
+                    <span className="text-slate-700">{review.company}</span>
                   </p>
                 </div>
               </div>

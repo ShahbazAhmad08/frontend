@@ -10,13 +10,13 @@ export default function PremiumNavbar() {
   const location = useLocation();
 
   return (
-    <header className=" fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-2xl lg:rounded-full shadow-[0_24px_50px_-12px_rgba(0,0,0,0.7)] text-slate-100">
+    <header className=" fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl bg-white/80 backdrop-blur-xl border border-slate-200 rounded-2xl lg:rounded-full shadow-[0_24px_50px_-12px_rgba(0,0,0,0.1)] text-black">
       <div className=" lg:pr-8 lg:pl-0">
         <div className="h-20 flex items-center justify-between">
           {/* LOGO: Clean & Refined Typography */}
           <Link to="/" className="group flex items-center">
             {/* Elevated Glass Backdrop Wrapper - Scaled up for higher visibility */}
-            <div className="h-20 w-20 rounded-full bg-slate-900 border border-slate-800 dark:border-slate-800/80 group-hover:border-blue-500/40 flex items-center justify-center  transition-all duration-300 relative shadow-2xl">
+            <div className="h-20 w-20 rounded-full bg-white border border-slate-200 group-hover:border-blue-500/40 flex items-center justify-center  transition-all duration-300 relative shadow-md">
               <img
                 src="/logo.png"
                 alt="Nazra Logo"
@@ -38,11 +38,11 @@ export default function PremiumNavbar() {
                   onMouseEnter={() => setOpenDropdown(item.title)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <button className="flex items-center gap-1.5 px-4 py-2 rounded-full font-medium text-sm text-slate-300 hover:text-white hover:bg-slate-800/40 transition-all duration-200">
+                  <button className="flex items-center gap-1.5 px-4 py-2 rounded-full font-medium text-sm text-slate-600 hover:text-black hover:bg-slate-100/60 transition-all duration-200">
                     <span>{item.title}</span>
                     <ChevronDown
                       size={14}
-                      className={`transition-transform duration-300 ${openDropdown === item.title ? "rotate-180 text-blue-400" : "text-slate-500"}`}
+                      className={`transition-transform duration-300 ${openDropdown === item.title ? "rotate-180 text-blue-600" : "text-slate-400"}`}
                     />
                   </button>
 
@@ -54,17 +54,17 @@ export default function PremiumNavbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.98 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute top-full left-0 mt-2 min-w-[320px] bg-slate-900 border border-slate-800/80 shadow-[0_20px_40px_rgba(0,0,0,0.5)] rounded-2xl p-2.5 z-50 overflow-hidden"
+                        className="absolute top-full left-0 mt-2 min-w-[320px] bg-white border border-slate-200 shadow-[0_20px_40px_rgba(0,0,0,0.1)] rounded-2xl p-2.5 z-50 overflow-hidden"
                       >
                         <div className="grid gap-1">
                           {item.items.map((subItem) => (
                             <Link
                               key={subItem.title}
                               to={subItem.path}
-                              className="group/item flex flex-col p-3 rounded-xl hover:bg-slate-800/50 transition-colors duration-200"
+                              className="group/item flex flex-col p-3 rounded-xl hover:bg-slate-100 transition-colors duration-200"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-semibold text-slate-200 group-hover/item:text-blue-400 transition-colors">
+                                <span className="text-sm font-semibold text-slate-700 group-hover/item:text-blue-600 transition-colors">
                                   {subItem.title}
                                 </span>
                                 <ArrowRight
@@ -83,7 +83,7 @@ export default function PremiumNavbar() {
                 <Link
                   key={item.title}
                   to={item.path}
-                  className={`relative px-4 py-2 font-medium text-sm transition-colors duration-200 ${isActive ? "text-white" : "text-slate-300 hover:text-white"}`}
+                  className={`relative px-4 py-2 font-medium text-sm transition-colors duration-200 ${isActive ? "text-black" : "text-slate-600 hover:text-black"}`}
                 >
                   <span>{item.title}</span>
                   {isActive && (
@@ -110,7 +110,7 @@ export default function PremiumNavbar() {
 
           {/* MOBILE TOGGLE BUTTON */}
           <button
-            className="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors"
+            className="lg:hidden p-2 rounded-xl text-slate-600 hover:text-black hover:bg-slate-100/60 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -125,14 +125,14 @@ export default function PremiumNavbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden border-t border-slate-800 overflow-hidden"
+              className="lg:hidden border-t border-slate-200 overflow-hidden"
             >
               <div className="flex flex-col gap-1.5 py-6">
                 {navigation.map((item) =>
                   item.dropdown ? (
                     <div
                       key={item.title}
-                      className="border-b border-slate-800/40 pb-1"
+                      className="border-b border-slate-200 pb-1"
                     >
                       <button
                         onClick={() =>
@@ -140,12 +140,12 @@ export default function PremiumNavbar() {
                             openDropdown === item.title ? null : item.title,
                           )
                         }
-                        className="flex items-center justify-between w-full py-3 px-2 text-left font-semibold text-sm text-slate-100"
+                        className="flex items-center justify-between w-full py-3 px-2 text-left font-semibold text-sm text-black"
                       >
                         <span>{item.title}</span>
                         <ChevronDown
                           size={16}
-                          className={`text-slate-500 transition-transform duration-300 ${openDropdown === item.title ? "rotate-180 text-blue-400" : ""}`}
+                          className={`text-slate-400 transition-transform duration-300 ${openDropdown === item.title ? "rotate-180 text-blue-600" : ""}`}
                         />
                       </button>
 
@@ -155,14 +155,14 @@ export default function PremiumNavbar() {
                             initial={{ opacity: 0, y: -5 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -5 }}
-                            className="ml-4 pl-2 border-l border-slate-800 flex flex-col gap-1"
+                            className="ml-4 pl-2 border-l border-slate-200 flex flex-col gap-1"
                           >
                             {item.items.map((subItem) => (
                               <Link
                                 key={subItem.title}
                                 to={subItem.path}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="py-2.5 text-sm font-medium text-slate-400 hover:text-blue-400 transition-colors"
+                                className="py-2.5 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
                               >
                                 {subItem.title}
                               </Link>
@@ -176,7 +176,7 @@ export default function PremiumNavbar() {
                       key={item.title}
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="py-3 px-2 font-medium text-sm text-slate-200 hover:text-blue-400 transition-colors border-b border-slate-800/40"
+                      className="py-3 px-2 font-medium text-sm text-slate-700 hover:text-blue-600 transition-colors border-b border-slate-200"
                     >
                       {item.title}
                     </Link>

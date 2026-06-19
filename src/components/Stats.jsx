@@ -21,7 +21,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-24 bg-slate-900">
+    <section className="py-24 bg-slate-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((item) => (
@@ -30,11 +30,13 @@ export default function Stats() {
               whileHover={{
                 scale: 1.03,
               }}
-              className="bg-slate-800 rounded-[28px] p-10 text-center border border-slate-700"
+              className="bg-slate-200 rounded-[28px] p-10 text-center border border-slate-200"
             >
-              <h3 className="text-5xl font-black text-white">{item.number}</h3>
+              <h3 className="text-5xl font-black text-blue-600">
+                {item.number}
+              </h3>
 
-              <p className="mt-4 text-slate-400">{item.label}</p>
+              <p className="mt-4 text-slate-800">{item.label}</p>
             </motion.div>
           ))}
         </div>

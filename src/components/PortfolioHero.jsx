@@ -20,7 +20,7 @@ const PremiumPortfolioHero = () => {
   };
 
   return (
-    <section className="relative pt-36 lg:pt-48 pb-16 lg:pb-24 bg-slate-950 text-slate-100 overflow-hidden">
+    <section className="relative pt-36 lg:pt-48 pb-16 lg:pb-24 bg-white text-black overflow-hidden">
       {/* Decorative Minimal Grid & Glow Layout Backing */}
       <div className="absolute inset-0 grid-pattern-dark mask-radial-bottom opacity-20 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -35,7 +35,7 @@ const PremiumPortfolioHero = () => {
           {/* PREMIUM ACCENT BADGE */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 bg-blue-500/5 border border-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.2em] uppercase shadow-inner"
+            className="inline-flex items-center gap-2 bg-blue-500/5 border border-blue-500/10 text-blue-600 px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.2em] uppercase shadow-inner"
           >
             <Sparkles size={12} className="animate-pulse" />
             <span>Case Portfolio</span>
@@ -44,10 +44,10 @@ const PremiumPortfolioHero = () => {
           {/* REFINED TYPOGRAPHY DISPLAY HEADER */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-[1.1]"
           >
             Helping Businesses Grow Through
-            <span className="block mt-2 text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-indigo-200 bg-clip-text">
+            <span className="block mt-2 text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-200 bg-clip-text">
               Digital Innovation.
             </span>
           </motion.h1>
@@ -55,7 +55,7 @@ const PremiumPortfolioHero = () => {
           {/* DESCRIPTION SUBTEXT */}
           <motion.p
             variants={itemVariants}
-            className="text-slate-400 text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed pt-2"
+            className="text-slate-600 text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed pt-2"
           >
             Explore some of our latest verified deployments, structural digital
             transformation case systems, and performance records delivered for

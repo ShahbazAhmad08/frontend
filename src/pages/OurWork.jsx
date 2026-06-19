@@ -7,7 +7,7 @@ import { portfolioProjects } from "../data/portfolioData";
 
 const OurWork = () => {
   return (
-    <div className="bg-slate-950 min-h-screen text-slate-100 selection:bg-blue-500/20 selection:text-blue-300">
+    <div className="bg-white min-h-screen text-black selection:bg-blue-500/20 selection:text-blue-600">
       {/* 01. PORTFOLIO TYPOGRAPHY HERO HEADER */}
       <PremiumPortfolioHero />
 
