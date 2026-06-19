@@ -10,8 +10,8 @@ export default function PremiumNavbar() {
   const location = useLocation();
 
   return (
-    <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-2xl lg:rounded-full shadow-[0_24px_50px_-12px_rgba(0,0,0,0.7)] text-slate-100">
-      <div className="px-6 lg:px-8">
+    <header className=" fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-2xl lg:rounded-full shadow-[0_24px_50px_-12px_rgba(0,0,0,0.7)] text-slate-100">
+      <div className=" lg:pr-8 lg:pl-0">
         <div className="h-20 flex items-center justify-between">
           {/* LOGO: Clean & Refined Typography */}
           <Link to="/" className="group flex items-center">
