@@ -12,56 +12,47 @@ export default function WhyChooseUs({ data }) {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="relative py-24 bg-slate-950 text-slate-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* IMAGE */}
-
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="rounded-[32px] overflow-hidden shadow-xl">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* IMAGE BLOCK */}
+          <div className="lg:col-span-5 w-full">
+            <div className="rounded-[28px] overflow-hidden shadow-[0_24px_50px_rgba(0,0,0,0.4)] border border-slate-900 aspect-video lg:aspect-square bg-slate-950">
               <img
                 src={data.image}
                 alt={data.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover filter brightness-[0.85]"
               />
             </div>
-          </motion.div>
+          </div>
 
-          {/* CONTENT */}
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-flex px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
-              Why Choose Us
+          {/* ASYMMETRIC CONTENT ENGINE */}
+          <div className="lg:col-span-7 text-left">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block">
+              Strategic Blueprint
             </span>
 
-            <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-black text-slate-900">
+            <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
               {data.title}
             </h2>
 
-            <p className="mt-6 text-slate-600 leading-relaxed text-lg">
+            <p className="mt-6 text-slate-400 text-sm md:text-base leading-relaxed font-medium">
               {data.description}
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
+            {/* BENEFITS BULLET MATRIX */}
+            <div className="grid sm:grid-cols-2 gap-3 mt-8">
               {benefits.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-blue-600" />
-
-                  <span className="font-medium text-slate-700">{item}</span>
+                <div
+                  key={index}
+                  className="flex items-center gap-2.5 text-slate-300 font-medium text-xs md:text-sm bg-slate-900/20 border border-slate-900/40 px-4 py-3 rounded-xl"
+                >
+                  <CheckCircle2 size={14} className="text-blue-400 shrink-0" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

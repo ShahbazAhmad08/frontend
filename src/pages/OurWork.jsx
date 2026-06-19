@@ -1,31 +1,38 @@
-import PortfolioHero from "../components/PortfolioHero";
-import PortfolioStats from "../components/PortfolioStats";
+import PremiumPortfolioHero from "../components/PortfolioHero";
+import PremiumStats from "../components/Stats"; // Reusing your high-fidelity premium stats counter smoothly
 import PortfolioProjectCard from "../components/PortfolioProjectCard";
-
+import PremiumContact from "../components/Contact";
+import PremiumFadeUp from "../components/FadeUp";
 import { portfolioProjects } from "../data/portfolioData";
-import Contact from "../components/Contact";
 
 const OurWork = () => {
   return (
-    <div className="bg-white">
-      <PortfolioHero />
+    <div className="bg-slate-950 min-h-screen text-slate-100 selection:bg-blue-500/20 selection:text-blue-300">
+      {/* 01. PORTFOLIO TYPOGRAPHY HERO HEADER */}
+      <PremiumPortfolioHero />
 
-      <PortfolioStats />
+      {/* 02. METRIC DATA TELEMETRY OVERLAY BAR */}
+      <PremiumFadeUp delay={0.1}>
+        <PremiumStats />
+      </PremiumFadeUp>
 
-      <section className="py-20">
+      {/* 03. CASE STUDIES FLOW MATRIX */}
+      <section className="py-24 lg:py-32 relative z-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="space-y-10">
+          <div className="space-y-12 md:space-y-16">
             {portfolioProjects.map((project, index) => (
-              <PortfolioProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-              />
+              <PremiumFadeUp key={project.id || index}>
+                <PortfolioProjectCard project={project} index={index} />
+              </PremiumFadeUp>
             ))}
           </div>
         </div>
       </section>
-      <Contact />
+
+      {/* 04. INTERACTIVE INPUT PIPELINE / CONSULTATION STUDIO */}
+      <PremiumFadeUp>
+        <PremiumContact />
+      </PremiumFadeUp>
     </div>
   );
 };

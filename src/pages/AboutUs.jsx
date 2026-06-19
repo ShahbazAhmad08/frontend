@@ -1,44 +1,38 @@
-// AboutUs.jsx
-
 import { motion } from "framer-motion";
-import { COLORS } from "../constants/theme";
 import {
   Users,
   Award,
   CheckCircle,
   TrendingUp,
   HeartHandshake,
+  Sparkles,
 } from "lucide-react";
 import Contact from "../components/Contact";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
+const premiumFadeUp = {
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };
-const cardClass =
-  "bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300";
+
+const premiumCardClass =
+  "bg-slate-900/20 backdrop-blur-md border border-slate-900 rounded-[24px] p-6 lg:p-8 hover:border-slate-800 transition-all duration-300 shadow-xl relative overflow-hidden group";
 
 const aboutData = {
   badge: "About Nazra Software Solutions",
-
   heading: "Your Trusted Digital Growth Partner",
-
   paragraphs: [
     "Nazra Software Solutions is a professional web development company in India providing complete end-to-end digital solutions that help businesses grow online.",
-
     "From website development, SEO, online advertising, branding, graphic design, and email marketing, we handle everything your business needs to build a strong digital presence.",
-
     "We specialize in helping startups and small businesses take their first step online while supporting established businesses with lead generation, visibility, and long-term digital growth.",
-
     "At Nazra Software Solutions, our success is measured by the success of our clients.",
   ],
-
   stats: [
     { number: "5+", label: "Years of Experience" },
     { number: "3+", label: "Countries Served" },
@@ -51,267 +45,260 @@ const aboutData = {
   ],
 };
 
-const stats = aboutData.stats;
-
 export default function AboutUs() {
   return (
-    <div className="relative bg-white text-slate-900 overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute top-0 left-0 h-96 w-96 rounded-full blur-3xl opacity-30"
-          style={{ backgroundColor: COLORS.accent }}
-        />
+    <div className="relative bg-slate-950 text-slate-100 overflow-hidden min-h-screen">
+      {/* Dynamic Background Micro Grid & Glowing Ambient Blurs */}
+      <div className="absolute inset-0 grid-pattern-dark mask-radial-top opacity-25 pointer-events-none" />
+      <div className="absolute top-24 left-10 w-96 h-96 bg-blue-500/[0.02] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-96 h-96 bg-indigo-500/[0.02] blur-[120px] rounded-full pointer-events-none" />
 
-        <div
-          className="absolute right-0 top-1/2 h-96 w-96 rounded-full blur-3xl opacity-20"
-          style={{ backgroundColor: COLORS.secondary }}
-        />
-      </div>
-
-      {/* ================= ABOUT STORY ================= */}
-
-      <section className="py-28">
+      {/* ================= SECTION 1: THE STORY ENGINE ================= */}
+      <section className="pt-36 lg:pt-44 pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* LEFT SIDE: OBSIDIAN CONTAINER */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeUp}
+              variants={premiumFadeUp}
+              className="lg:col-span-5 w-full"
             >
-              <div
-                className="relative h-125 rounded-3xl overflow-hidden border border-slate-200 shadow-sm"
-                style={{
-                  background: `linear-gradient(135deg, ${COLORS.lightGray}, #EEF6FF)`,
-                }}
-              >
-                <div
-                  className="absolute top-10 left-10 h-32 w-32 rounded-full opacity-40"
-                  style={{ backgroundColor: COLORS.accent }}
-                />
+              <div className="relative bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 rounded-[32px] p-8 lg:p-10 overflow-hidden shadow-[0_24px_50px_rgba(0,0,0,0.5)]">
+                <div className="absolute -top-12 -left-12 h-32 w-32 bg-blue-500/10 blur-[50px] rounded-full pointer-events-none" />
+                <div className="absolute -bottom-16 -right-16 h-40 w-40 bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none" />
 
-                <div
-                  className="absolute bottom-10 right-10 h-40 w-40 rounded-full opacity-20"
-                  style={{ backgroundColor: COLORS.secondary }}
-                />
-
-                <div className="absolute inset-0 p-10 flex flex-col justify-center">
-                  <span
-                    className="text-sm font-semibold uppercase tracking-widest"
-                    style={{ color: COLORS.primary }}
-                  >
+                <div className="relative z-10">
+                  <span className="text-xs font-bold tracking-widest text-blue-400 uppercase">
                     Since 2020
                   </span>
 
-                  <h3 className="text-5xl font-bold mt-4 text-slate-900">
+                  <h3 className="text-3xl font-bold tracking-tight text-white mt-3">
                     Building Digital
                     <br />
                     Success Stories
                   </h3>
 
-                  <p className="text-slate-600 mt-6 max-w-sm">
-                    Helping startups and businesses establish, grow, and scale
-                    their online presence through modern digital solutions.
+                  <p className="text-slate-400 text-sm leading-relaxed mt-4 font-medium">
+                    Helping startups and enterprises establish, grow, and scale
+                    their online presence through clean modern digital
+                    solutions.
                   </p>
 
-                  <div className="grid grid-cols-2 gap-4 mt-10">
-                    <div className="bg-white rounded-2xl p-4 shadow-sm">
-                      <h4
-                        className="text-3xl font-bold"
-                        style={{ color: COLORS.primary }}
-                      >
+                  <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-900">
+                    <div className="bg-slate-950/60 border border-slate-900 rounded-2xl p-4">
+                      <h4 className="text-2xl font-bold text-white font-mono">
                         100+
                       </h4>
-                      <p className="text-sm text-slate-500">
-                        Projects Delivered
+                      <p className="text-xs text-slate-500 font-semibold tracking-wide uppercase mt-1">
+                        Deployments
                       </p>
                     </div>
-
-                    <div className="bg-white rounded-2xl p-4 shadow-sm">
-                      <h4
-                        className="text-3xl font-bold"
-                        style={{ color: COLORS.primary }}
-                      >
+                    <div className="bg-slate-950/60 border border-slate-900 rounded-2xl p-4">
+                      <h4 className="text-2xl font-bold text-white font-mono">
                         98%
                       </h4>
-                      <p className="text-sm text-slate-500">Repeat Clients</p>
+                      <p className="text-xs text-slate-500 font-semibold tracking-wide uppercase mt-1">
+                        Retention
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
+            {/* RIGHT SIDE: COPY AND ESSAY BLOCKS */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeUp}
+              variants={premiumFadeUp}
+              className="lg:col-span-7 flex flex-col justify-center"
             >
-              <span className="font-medium" style={{ color: COLORS.primary }}>
-                {aboutData.title}
-              </span>
+              <div className="inline-flex items-center gap-2 bg-blue-500/5 border border-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase w-fit mb-4 shadow-inner">
+                <Sparkles size={12} className="animate-pulse" />
+                <span>{aboutData.badge}</span>
+              </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold mt-4">
-                {aboutData.subtitle}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                {aboutData.heading}
               </h2>
 
-              {aboutData.paragraphs.map((text, index) => (
-                <p
-                  key={index}
-                  className={`${index === 0 ? "mt-8" : "mt-6"} text-slate-600 leading-relaxed`}
-                >
-                  {text}
-                </p>
-              ))}
+              <div className="space-y-4 mt-6">
+                {aboutData.paragraphs.map((text, index) => (
+                  <p
+                    key={index}
+                    className="text-slate-400 text-sm md:text-base leading-relaxed font-medium"
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ================= STATS SECTION ================= */}
-
-      <section className="py-24">
+      {/* ================= SECTION 2: THE DATA TELEMETRY MATRIX ================= */}
+      <section className="py-20 border-t border-slate-900/60 bg-slate-950">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeUp}
-            className="text-center mb-16"
+            variants={premiumFadeUp}
+            className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-5xl font-bold">Numbers That Speak</h2>
-
-            <p className="text-slate-500 mt-4">
-              Our journey in digital transformation and business growth.
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+              Numbers That Speak
+            </h2>
+            <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+              Our trackable history in global digital transformation and
+              sustainable client brand growth velocity parameters.
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((item, index) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {aboutData.stats.map((item, index) => (
               <motion.div
                 key={index}
-                whileHover={{
-                  y: -8,
-                  scale: 1.03,
-                }}
-                className={cardClass}
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.04 }}
+                className="bg-gradient-to-b from-slate-900/40 to-transparent border border-slate-900 rounded-2xl p-6 hover:border-slate-800 transition-colors"
               >
-                <h3
-                  className="text-5xl font-bold"
-                  style={{ color: COLORS.primary }}
-                >
+                <h3 className="text-3xl lg:text-4xl font-black text-white font-mono">
                   {item.number}
                 </h3>
-
-                <p className="text-slate-500 mt-3">{item.label}</p>
+                <p className="text-slate-400 text-xs md:text-sm font-semibold tracking-tight mt-2">
+                  {item.label}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ================= CORE VALUES ================= */}
-
-      <section className="py-28" style={{ backgroundColor: COLORS.lightGray }}>
+      {/* ================= SECTION 3: THE BENTO VALUES ================= */}
+      <section className="py-24 border-t border-slate-900/60 bg-slate-900/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeUp}
-            className="text-center mb-16"
+            variants={premiumFadeUp}
+            className="text-center max-w-2xl mx-auto mb-16"
           >
-            <span className="font-medium" style={{ color: COLORS.primary }}>
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block">
               Our Foundation
             </span>
-
-            <h2 className="text-5xl font-bold mt-4">Core Values</h2>
-
-            <p className="text-slate-500 mt-6 max-w-3xl mx-auto">
-              Everything we do is guided by principles that help us build trust,
-              deliver quality, and create long-term relationships with our
-              clients.
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white mt-4">
+              Core Architectural Values
+            </h2>
+            <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+              Everything we execute is dictated by core parameters that help us
+              build secure client nodes, structural support lines, and
+              transparent relationships.
             </p>
           </motion.div>
 
-          {/* Bento Grid */}
-
+          {/* Core Bento System Box Alignment */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <motion.div whileHover={{ scale: 1.03 }} className={cardClass}>
-              <CheckCircle className="mb-5" style={{ color: COLORS.primary }} />
-
-              <h3 className="text-xl font-semibold mb-3">
-                Honesty & Transparency
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className={premiumCardClass}
+            >
+              <CheckCircle className="mb-4 text-blue-400" size={22} />
+              <h3 className="text-lg font-bold tracking-tight text-white mb-2">
+                Honesty & Absolute Transparency
               </h3>
-
-              <p className="text-slate-500">
-                We believe in clear communication and never make false promises.
-              </p>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.03 }} className={cardClass}>
-              <Users className="mb-5" style={{ color: COLORS.secondary }} />
-
-              <h3 className="text-xl font-semibold mb-3">
-                Client Satisfaction First
-              </h3>
-
-              <p className="text-slate-500">
-                Every decision we make aims to deliver measurable value and
-                results.
-              </p>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.03 }} className={cardClass}>
-              <HeartHandshake
-                className="mb-5"
-                style={{ color: COLORS.accent }}
-              />
-
-              <h3 className="text-xl font-semibold mb-3">
-                Reliability & Support
-              </h3>
-
-              <p className="text-slate-500">
-                We stand by our clients long after project delivery, ensuring
-                continued success.
-              </p>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.03 }} className={cardClass}>
-              <TrendingUp className="text-orange-500 mb-5" />
-
-              <h3 className="text-xl font-semibold mb-3">
-                Continuous Improvement
-              </h3>
-
-              <p className="text-slate-500">
-                We constantly evolve our services to stay aligned with modern
-                business needs.
+              <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-medium">
+                We enforce completely transparent tracking parameters and clear
+                engineering progress reporting pipelines. Zero hidden
+                constraints.
               </p>
             </motion.div>
 
             <motion.div
-              whileHover={{ scale: 1.03 }}
-              className={cardClass + " md:col-span-2"}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className={premiumCardClass}
             >
-              <Award className="text-yellow-500 mb-5" />
-
-              <h3 className="text-xl font-semibold mb-3">
-                Affordability with Quality
+              <Users className="mb-4 text-indigo-400" size={22} />
+              <h3 className="text-lg font-bold tracking-tight text-white mb-2">
+                Client Conversion Velocity
               </h3>
+              <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-medium">
+                Every software build or strategic campaign asset is explicitly
+                engineered to output verifiable baseline values and leads.
+              </p>
+            </motion.div>
 
-              <p className="text-slate-500">
-                We prove that exceptional digital solutions don't have to come
-                with premium pricing. Our goal is to make quality digital growth
-                accessible to businesses of every size.
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className={premiumCardClass}
+            >
+              <HeartHandshake className="mb-4 text-emerald-400" size={22} />
+              <h3 className="text-lg font-bold tracking-tight text-white mb-2">
+                Deterministic Operational Support
+              </h3>
+              <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-medium">
+                We maintain active operations supporting systems infrastructure
+                and optimization checks long past initial framework deployment.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className={premiumCardClass}
+            >
+              <TrendingUp className="mb-4 text-amber-500" size={22} />
+              <h3 className="text-lg font-bold tracking-tight text-white mb-2">
+                Continuous Iteration Multiplier
+              </h3>
+              <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-medium">
+                Our engineering team constantly shifts core assets to adapt to
+                evolving web algorithms, performance thresholds, and search
+                metrics.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
+              className={`${premiumCardClass} md:col-span-2`}
+            >
+              <Award className="mb-4 text-purple-400" size={22} />
+              <h3 className="text-lg font-bold tracking-tight text-white mb-2">
+                High-End Performance Access
+              </h3>
+              <p className="text-slate-400 text-xs md:text-sm leading-relaxed font-medium">
+                We design and support exceptional software products and growth
+                systems accessible to businesses of varying scales. We prove
+                that elite custom web architecture doesn't require budget
+                barriers to achieve market separation.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
-      {/* FORM + INFO */}
+
+      {/* Renders your high-fidelity premium contact systems directly down-fold */}
       <Contact />
     </div>
   );

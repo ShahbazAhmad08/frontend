@@ -1,0 +1,44 @@
+:root {
+  /* Theme Colors as CSS Custom Properties */
+  --color-primary: #2563eb;
+  --color-secondary: #3b82f6;
+  --color-accent: #60a5fa;
+  --color-dark: #0f172a;
+  --color-dark-light: #1e293b;
+  --color-slate600: #334155;
+  --color-gray: #64748b;
+  --color-light-gray: #f8fafc;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+/* Utility Classes for Grid Patterns */
+.grid-pattern-dark {
+  background-image:
+    linear-gradient(to right, var(--color-dark-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-dark-light) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+.grid-pattern-slate {
+  background-image:
+    linear-gradient(to right, var(--color-slate-600) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-slate-600) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+
+.mask-radial-top {
+  mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    black 70%,
+    transparent 100%
+  );
+}
+
+.mask-radial-bottom {
+  mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 100%,
+    black 60%,
+    transparent 100%
+  );
+}

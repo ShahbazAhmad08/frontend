@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "generate-css": "node scripts/generate-css.js",
+    "dev": "npm run generate-css && vite",
+    "build": "npm run generate-css && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -1,79 +1,87 @@
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
-import { COLORS } from "../constants/theme";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useState } from "react";
 
 const ContactForm = ({ cardClass, fadeUp }) => {
   const [token, setToken] = useState(null);
-  // console.log(import.meta.env.VITE_TURNSTILE_SITE_KEY);
+
+  // High-end input styling class variable
+  const inputClass =
+    "w-full bg-slate-950/40 border border-slate-800/80 text-slate-100 rounded-xl px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/30 font-medium text-sm";
+
   return (
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className={cardClass}
-    >
-      <div className="mb-8">
-        <span className="font-medium" style={{ color: COLORS.primary }}>
+    <motion.div variants={fadeUp} className={cardClass}>
+      {/* Decorative localized light streak */}
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 blur-[60px] rounded-full pointer-events-none" />
+
+      <div className="mb-8 relative z-10">
+        <span className="text-xs font-bold tracking-widest text-blue-400 uppercase">
           Schedule a Free Consultation
         </span>
-
-        <h2 className="text-3xl font-bold mt-2">
+        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-white mt-2">
           Let's Talk About Your Project
         </h2>
       </div>
 
-      <form className="space-y-5">
-        <input
-          type="text"
-          placeholder="Name"
-          className="w-full border border-slate-200 rounded-xl px-4 py-4 outline-none focus:border-blue-500"
-        />
-        <input
-          type="text"
-          placeholder="Phone"
-          className="w-full border border-slate-200 rounded-xl px-4 py-4 outline-none focus:border-blue-500"
-        />
+      <form
+        className="space-y-4 relative z-10"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <div className="grid sm:grid-cols-2 gap-4">
+          <input type="text" placeholder="Name" className={inputClass} />
+          <input type="text" placeholder="Phone" className={inputClass} />
+        </div>
+
         <input
           type="email"
-          placeholder="Email"
-          className="w-full border border-slate-200 rounded-xl px-4 py-4 outline-none focus:border-blue-500"
+          placeholder="Email Address"
+          className={inputClass}
         />
-        <input
-          type="text"
-          placeholder="Company Name"
-          className="w-full border border-slate-200 rounded-xl px-4 py-4 outline-none focus:border-blue-500"
-        />
-        <select className="w-full border border-slate-200 rounded-xl px-4 py-4 outline-none">
-          <option>Select Option</option>
-          <option>Phone Call</option>
-          <option>WhatsApp</option>
-          <option>Email</option>
-          <option>Google Meet</option>
-        </select>
+
+        <input type="text" placeholder="Company Name" className={inputClass} />
+
+        <div className="relative">
+          <select
+            className={`${inputClass} appearance-none cursor-pointer text-slate-300`}
+          >
+            <option className="bg-slate-900 text-slate-400">
+              Preferred Connection Mode
+            </option>
+            <option className="bg-slate-900 text-slate-200">Phone Call</option>
+            <option className="bg-slate-900 text-slate-200">WhatsApp</option>
+            <option className="bg-slate-900 text-slate-200">Email</option>
+            <option className="bg-slate-900 text-slate-200">Google Meet</option>
+          </select>
+          <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500">
+            <span className="text-[10px]">▼</span>
+          </div>
+        </div>
+
         <textarea
-          rows={5}
+          rows={4}
           placeholder="To better assist you, please describe how we can help..."
-          className="w-full border border-slate-200 rounded-xl px-4 py-4 outline-none focus:border-blue-500 resize-none"
+          className={`${inputClass} resize-none`}
         />
-        {/* Cloudflare Turnstile */}
-        <div className="border border-slate-200 rounded-xl p-4 bg-slate-50">
+
+        {/* Cloudflare Turnstile Verification */}
+        <div className="border border-slate-900 bg-slate-950/60 rounded-xl p-3.5 flex justify-center items-center backdrop-blur-md">
           <Turnstile
             siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
             onSuccess={(token) => setToken(token)}
+            options={{ theme: "dark" }}
           />
         </div>
+
         <button
           type="submit"
-          className="w-full py-4 rounded-xl text-white font-semibold flex items-center justify-center gap-2"
-          style={{
-            backgroundColor: COLORS.primary,
-          }}
+          className="w-full group inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-semibold tracking-wide text-sm shadow-lg shadow-blue-600/10 hover:shadow-blue-500/20 transition-all duration-300 overflow-hidden"
         >
-          <Send size={18} />
-          Submit
+          <Send
+            size={15}
+            className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+          />
+          <span>Submit Project Request</span>
         </button>
       </form>
     </motion.div>

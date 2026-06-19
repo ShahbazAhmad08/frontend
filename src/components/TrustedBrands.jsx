@@ -15,20 +15,21 @@ const brands = [
   "Microsoft",
 ];
 
-export default function TrustedBrands() {
+export default function PremiumTrustedBrands() {
   return (
-    <section className="py-24 lg:py-32 border-y border-slate-100">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-center text-slate-500 font-medium mb-12">
-          TRUSTED BY 60+ BRANDS ACROSS INDIA
+    <section className="py-16 lg:py-20 bg-slate-950 border-y border-slate-900/60 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-6">
+        <p className="text-center text-[11px] text-slate-500 font-bold tracking-[0.25em] uppercase mb-12">
+          Engineered Integrations & Global Ecosystem Alignment
         </p>
 
-        <div className="overflow-hidden">
+        {/* Infinite CSS/Framer Linear Horizontal Loop */}
+        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,#000_15%,#000_85%,transparent_100%)]">
           <motion.div
-            className="flex gap-20"
+            className="flex items-center gap-16 md:gap-24 w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
-              duration: 20,
+              duration: 25,
               repeat: Infinity,
               ease: "linear",
             }}
@@ -36,9 +37,10 @@ export default function TrustedBrands() {
             {brands.map((brand, index) => (
               <div
                 key={index}
-                className="text-3xl font-black text-slate-300 whitespace-nowrap"
+                className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-700 hover:text-slate-500 transition-colors cursor-default select-none font-sans"
               >
                 {brand}
+                <span className="text-blue-500/40">.</span>
               </div>
             ))}
           </motion.div>

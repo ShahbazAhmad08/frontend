@@ -8,274 +8,297 @@ import {
   Code,
   Palette,
   ShoppingCart,
+  ArrowUpRight,
 } from "lucide-react";
 
-export default function Hero() {
+export default function PremiumHero() {
   const pills = [
-    {
-      label: "Website Design",
-      icon: Globe,
-      className: "-top-5 left-20",
-    },
-    {
-      label: "Custom Coded Website",
-      icon: Code,
-      className: "top-98 -left-8",
-    },
+    { label: "Website Design", icon: Globe, className: "-top-6 left-12" },
+    { label: "Custom Coded Website", icon: Code, className: "top-72 -left-16" },
     {
       label: "Social Media Management",
       icon: BarChart3,
-      className: "top-58 -right-8",
+      className: "top-44 -right-12",
     },
     {
       label: "Digital Marketing",
       icon: TrendingUp,
-      className: "bottom-44 -right-8",
+      className: "bottom-36 -right-16",
     },
     {
       label: "Search Engine Optimisation",
       icon: Search,
-      className: "-bottom-0 left-1/2 -translate-x-1/2",
+      className: "-bottom-4 left-1/3",
     },
     {
       label: "Graphics Designing",
       icon: Palette,
-      className: "top-15 -left-16",
+      className: "top-12 -left-20",
     },
     {
       label: "Mobile App Development",
       icon: Smartphone,
-      className: "bottom-30 -left-16",
+      className: "bottom-24 -left-12",
     },
     {
       label: "Coded E-Commerce Website",
       icon: ShoppingCart,
-      className: "top-10 -right-16",
+      className: "top-8 -right-20",
     },
   ];
 
-  return (
-    <section className="relative pt-24 lg:pt-36 pb-16 lg:pb-24 overflow-hidden bg-white">
-      {/* Grid Background */}
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+    },
+  };
 
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `
-            linear-gradient(#e5e7eb 1px, transparent 1px),
-            linear-gradient(90deg, #e5e7eb 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-        }}
-      />
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <section className="relative pt-28 lg:pt-40 pb-20 lg:pb-32 overflow-hidden bg-slate-950 text-slate-100">
+      {/* Premium Minimal Grid Mask */}
+      <div className="absolute inset-0 grid-pattern-dark mask-radial-top opacity-25 pointer-events-none" />
+
+      {/* Decorative Ambient Radial Glow */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          {/* LEFT */}
-
-          <div>
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          {/* LEFT: Content Engine */}
+          <motion.div
+            className="lg:col-span-5 text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-full text-sm font-semibold"
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-md border border-slate-800 text-slate-300 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase shadow-inner"
             >
-              ★★★★★ TRUSTED BY 16,000+ CLIENTS
+              <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+              Trusted Globally by 16,000+ Brands
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="mt-8 text-5xl md:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-slate-900"
+              variants={itemVariants}
+              className="mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white bg-clip-text"
             >
               Your Success
               <br />
               Story Starts
               <br />
-              <span className="text-blue-600"> Now!.</span>
+              <span className="text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-indigo-200 bg-clip-text">
+                Now.
+              </span>
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mt-6 text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed"
-            >
-              Nazra Software Solutions is a full-suite digital marketing agency,
-              offering a wide range of digital marketing services globally.
-            </motion.p>
+            <motion.div variants={itemVariants} className="space-y-4">
+              <p className="mt-6 text-base lg:text-lg text-slate-400 max-w-xl leading-relaxed">
+                Nazra Software Solutions is a full-suite architecture digital
+                studio, engineering growth and premium interfaces globally.
+              </p>
+              <p className="text-xs text-slate-500 uppercase tracking-widest font-semibold border-l-2 border-blue-500/50 pl-3">
+                A Division of Excellence Integrity Management Private Limited
+              </p>
+            </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="mt-6 text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed font-bold"
-            >
-              A division of Excellence Integrity Management Private Limited
-            </motion.p>
-
-            {/* Buttons */}
-
+            {/* Interactive Action Hub */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="mt-8 flex flex-col sm:flex-row gap-4"
+              variants={itemVariants}
+              className="mt-10 flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-2xl font-semibold transition text-sm lg:text-base">
-                Get a Free Strategy Call →
+              <button className="group relative bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 hover:shadow-blue-500/30 overflow-hidden">
+                <span>Get a Free Strategy Call</span>
+                <ArrowUpRight
+                  size={16}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                />
               </button>
 
-              <button className="border-2 border-slate-300 px-6 lg:px-8 py-3 lg:py-4 rounded-2xl font-semibold hover:bg-slate-50 transition text-sm lg:text-base">
-                Explore All Services →
+              <button className="border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-300 hover:text-white px-8 py-4 rounded-xl font-medium backdrop-blur-sm transition-all duration-300 text-sm">
+                Explore All Services
               </button>
             </motion.div>
 
-            {/* Bottom Stats */}
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-10 mt-10 lg:mt-14 border-t pt-6 lg:pt-8">
+            {/* Trust Matrix */}
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center gap-8 mt-12 border-t border-slate-900 pt-8"
+            >
               <div>
-                <h4 className="font-bold text-lg">16,000+ Clients</h4>
-
-                <p className="text-slate-500 text-sm">★★★★★ 4.9/5 Rating</p>
+                <h4 className="font-bold text-xl text-white tracking-tight">
+                  4.9 / 5.0
+                </h4>
+                <p className="text-slate-500 text-xs tracking-wide uppercase mt-0.5">
+                  Clutch Global Rating
+                </p>
               </div>
-
-              <div className="text-slate-600 font-medium">
-                ✓ No Lock-in Contracts
+              <div className="h-8 w-px bg-slate-900" />
+              <div className="text-slate-400 text-sm font-medium flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                No Lock-in Contracts. Zero Friction.
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* RIGHT */}
-
+          {/* RIGHT: Live Data & Interactive Micro-pills */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="lg:col-span-7 relative"
           >
-            {/* Floating Pills */}
-
-            <div className="grid grid-cols-2 gap-3 lg:hidden mb-8">
+            {/* Fluid Moving Service Badge Grid (Lg Screens Only) */}
+            <div className="hidden lg:block absolute inset-0 pointer-events-none">
               {pills.map((pill, index) => {
                 const Icon = pill.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{
+                      duration: 5 + index * 0.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className={`absolute ${pill.className} bg-slate-900/90 backdrop-blur-md border border-slate-800/80 px-4 py-2.5 rounded-full shadow-2xl shadow-black/40 flex items-center gap-2.5 z-20 hover:border-blue-500/50 transition-colors duration-300`}
+                  >
+                    <div className="p-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                      <Icon size={14} />
+                    </div>
+                    <span className="text-xs font-semibold tracking-wide text-slate-200">
+                      {pill.label}
+                    </span>
+                  </motion.div>
+                );
+              })}
+            </div>
 
+            {/* Micro Grid Component (Responsive Mobile Alternative) */}
+            <div className="grid grid-cols-2 gap-2.5 lg:hidden mb-8">
+              {pills.map((pill, index) => {
+                const Icon = pill.icon;
                 return (
                   <div
                     key={index}
-                    className="bg-white border border-slate-200 p-3 rounded-2xl shadow-sm flex items-center gap-2"
+                    className="bg-slate-900/60 border border-slate-800/60 p-3 rounded-xl flex items-center gap-2"
                   >
-                    <Icon size={16} className="text-blue-600 flex-shrink-0" />
-                    <span className="text-xs font-medium leading-tight">
+                    <Icon size={14} className="text-blue-400 flex-shrink-0" />
+                    <span className="text-xs font-medium text-slate-300 truncate">
                       {pill.label}
                     </span>
                   </div>
                 );
               })}
             </div>
-            <div className="hidden lg:block">
-              {pills.map((pill, index) => {
-                const Icon = pill.icon;
 
-                return (
-                  <motion.div
-                    key={index}
-                    animate={{ y: [0, -6, 0] }}
-                    transition={{
-                      duration: 4 + index,
-                      repeat: Infinity,
-                    }}
-                    className={`absolute ${pill.className} bg-white border border-slate-200 px-5 py-3 rounded-full shadow-md flex items-center gap-2 z-20`}
-                  >
-                    <Icon size={16} className="text-blue-600" />
-                    <span className="text-sm font-medium">{pill.label}</span>
-                  </motion.div>
-                );
-              })}
-            </div>
+            {/* Premium Glass Dashboard Panel */}
+            <div className="bg-slate-900/40 backdrop-blur-xl rounded-3xl border border-slate-800/80 shadow-[0_24px_60px_rgba(0,0,0,0.6)] p-6 lg:p-8 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-            {/* Dashboard */}
-
-            <div className="bg-white rounded-[24px] lg:rounded-[40px] border border-slate-200 shadow-xl p-4 sm:p-6 lg:p-8">
-              <div className="flex items-center gap-2 mb-8">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-
-                <span className="text-sm font-semibold text-slate-500 uppercase tracking-wider">
-                  Live Dashboard
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  </span>
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    Live Performance Telemetry
+                  </span>
+                </div>
+                <span className="text-[10px] bg-slate-800/80 border border-slate-700 text-slate-400 px-2 py-0.5 rounded-md font-mono">
+                  SECURE_NODE_OK
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 lg:gap-5">
-                <div className="border border-slate-200 rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-6">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black">
-                    16,000+
-                  </h3>
-
-                  <p className="text-slate-500 mt-1 text-xs sm:text-sm lg:text-base">
-                    Global Clients
-                  </p>
-
-                  <span className="text-green-600 text-xs sm:text-sm font-semibold">
-                    +18% this year
-                  </span>
-                </div>
-
-                <div className="border border-slate-200 rounded-3xl p-6">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black">
-                    98.4%
-                  </h3>
-
-                  <p className="text-slate-500 mt-2">Success Rate</p>
-
-                  <span className="text-green-600 text-sm font-semibold">
-                    +2.1% this year
-                  </span>
-                </div>
-
-                <div className="border border-slate-200 rounded-3xl p-6">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black">
-                    $50M+
-                  </h3>
-
-                  <p className="text-slate-500 mt-2">Revenue Generated</p>
-
-                  <span className="text-green-600 text-sm font-semibold">
-                    +34% this year
-                  </span>
-                </div>
-
-                <div className="border border-slate-200 rounded-3xl p-6">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black">
-                    285%
-                  </h3>
-
-                  <p className="text-slate-500 mt-2">Avg Traffic Growth</p>
-
-                  <span className="text-green-600 text-sm font-semibold">
-                    +62% this year
-                  </span>
-                </div>
+              {/* Data Metric Grid */}
+              <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                {[
+                  {
+                    value: "16,000+",
+                    label: "Global Deployments",
+                    rate: "+18% YoY",
+                    color: "from-blue-500/10 to-transparent",
+                  },
+                  {
+                    value: "98.4%",
+                    label: "Success Rate",
+                    rate: "+2.1% Alpha",
+                    color: "from-indigo-500/10 to-transparent",
+                  },
+                  {
+                    value: "$50M+",
+                    label: "Client Revenue Pipeline",
+                    rate: "+34% Velocity",
+                    color: "from-purple-500/10 to-transparent",
+                  },
+                  {
+                    value: "285%",
+                    label: "Avg Organic Conversion",
+                    rate: "+62% Multiplier",
+                    color: "from-emerald-500/10 to-transparent",
+                  },
+                ].map((stat, i) => (
+                  <div
+                    key={i}
+                    className="bg-gradient-to-b from-slate-900/80 to-slate-900/20 border border-slate-800/80 rounded-2xl p-4 lg:p-5 hover:border-slate-700 transition-all duration-300"
+                  >
+                    <span className="text-slate-500 text-xs block font-medium truncate">
+                      {stat.label}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl lg:text-3xl font-bold tracking-tight text-white mt-1.5 font-sans">
+                      {stat.value}
+                    </h3>
+                    <span className="text-emerald-400 text-[11px] font-semibold tracking-wide inline-flex items-center gap-1 mt-1 bg-emerald-500/5 px-2 py-0.5 rounded-md border border-emerald-500/10">
+                      {stat.rate}
+                    </span>
+                  </div>
+                ))}
               </div>
 
-              {/* Revenue Graph */}
+              {/* Data Visualization Graph Block */}
+              <div className="mt-6 lg:mt-6 bg-slate-950/80 border border-slate-800/60 rounded-2xl p-5">
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">
+                    Aggregated Client Valuation Scale
+                  </h4>
+                  <span className="text-xs font-bold text-blue-400 font-mono">
+                    MAX_PEAK_90%
+                  </span>
+                </div>
 
-              <div className="mt-5 lg:mt-8 border border-slate-200 rounded-2xl lg:rounded-3xl p-4 lg:p-6">
-                <h4 className="text-xs uppercase tracking-widest text-slate-400 mb-6">
-                  Monthly Revenue Growth
-                </h4>
-
-                <div className="flex items-end gap-1 sm:gap-2 lg:gap-3 h-20 sm:h-24 lg:h-28">
-                  {[30, 40, 35, 50, 45, 55, 52, 60, 70, 82, 80, 90].map(
+                <div className="flex items-end gap-1.5 sm:gap-2 h-24 pt-4">
+                  {[34, 46, 38, 58, 48, 62, 55, 68, 74, 88, 82, 94].map(
                     (height, index) => (
                       <div
                         key={index}
-                        className={`flex-1 rounded-lg ${
-                          index === 11 ? "bg-blue-600" : "bg-slate-300"
-                        }`}
-                        style={{
-                          height: `${height}%`,
-                        }}
-                      />
+                        className="flex-1 h-full flex flex-col justify-end group/bar"
+                      >
+                        <motion.div
+                          initial={{ height: 0 }}
+                          animate={{ height: `${height}%` }}
+                          transition={{
+                            duration: 1,
+                            ease: "easeOut",
+                            delay: index * 0.03,
+                          }}
+                          className={`w-full rounded-t-md transition-all duration-300 relative ${
+                            index === 11
+                              ? "bg-gradient-to-t from-blue-600 to-indigo-400 shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+                              : "bg-slate-800 group-hover/bar:bg-slate-700"
+                          }`}
+                        />
+                      </div>
                     ),
                   )}
                 </div>

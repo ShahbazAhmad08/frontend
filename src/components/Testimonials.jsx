@@ -1,60 +1,85 @@
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 const reviews = [
   {
     name: "John Smith",
+    role: "Managing Director",
     company: "TG Consulting",
     review:
-      "Nazra transformed our online presence and generated incredible leads.",
-      
+      "Nazra completely transformed our technical online footprint, building an elite ecosystem that safely aggregates high-intent lead generations consistently.",
   },
   {
     name: "Sarah Khan",
+    role: "Operations Head",
     company: "GeneHelix",
     review:
-      "Professional team, transparent communication, and outstanding results.",
+      "An exceptionally professional development team. Their transparent analytics updates, code reliability, and strategic communication infrastructure are unmatched.",
   },
   {
     name: "Michael Lee",
+    role: "Chief Marketing Officer",
     company: "Quantain",
     review:
-      "Our traffic and conversions increased significantly within months.",
+      "Our core performance velocity and customer conversions surged exponentially within initial quarters. A definitive growth partner.",
   },
 ];
 
-export default function Testimonials() {
+export default function PremiumTestimonials() {
   return (
-    <section className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center">
-          <span className="text-blue-600 font-semibold uppercase tracking-widest">
-            Testimonials
-          </span>
+    <section className="relative py-28 lg:py-36 bg-slate-950 text-slate-100 overflow-hidden">
+      {/* Structural Ambient Background Light */}
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[300px] bg-blue-500/[0.02] blur-[130px] rounded-full pointer-events-none" />
 
-          <h2 className="mt-4 text-4xl md:text-6xl font-black text-slate-900">
-            What Clients Say
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* SECTION HEADER */}
+        <div className="text-center max-w-2xl mx-auto">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block">
+            Verified Outcomes
+          </span>
+          <h2 className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Trusted by Leaders at High-Velocity Brands
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mt-20">
-          {reviews.map((review) => (
+        {/* REVIEWS GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-20">
+          {reviews.map((review, idx) => (
             <motion.div
               key={review.name}
-              whileHover={{ y: -8 }}
-              className="bg-white rounded-[28px] p-8 shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/30 backdrop-blur-md border border-slate-900 rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:border-slate-800 transition-all duration-300 shadow-2xl relative group"
             >
-              <p className="text-slate-600 leading-relaxed">
+              <Quote
+                className="absolute top-6 right-6 text-slate-800/60 pointer-events-none"
+                size={32}
+                strokeWidth={1}
+              />
+
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed font-medium relative z-10">
                 "{review.review}"
               </p>
 
-              <div className="mt-8">
-                <h4 className="font-bold text-slate-900">
-                  {review.name}
-                </h4>
-
-                <p className="text-slate-500">
-                  {review.company}
-                </p>
+              <div className="mt-8 pt-6 border-t border-slate-900/80 flex items-center gap-3">
+                <div className="h-9 w-9 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-xs font-bold font-mono text-slate-400">
+                  {review.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-white group-hover:text-blue-400 transition-colors">
+                    {review.name}
+                  </h4>
+                  <p className="text-[11px] text-slate-500 font-medium tracking-wide mt-0.5">
+                    {review.role} ·{" "}
+                    <span className="text-slate-400">{review.company}</span>
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

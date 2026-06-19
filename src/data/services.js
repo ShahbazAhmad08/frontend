@@ -156,13 +156,13 @@ export const services = {
         "Need Stunning Creative Professional Eye-Impactful Social Media?",
       description:
         "Amazing Social Media Management for Every Need. Our social media management team blends creativity with strategy to deliver professional solutions that make your brand stand out. From Instagram and Facebook to LinkedIn and Twitter, we manage platforms that leave a lasting impression. Whether you need brand awareness, lead generation, or engaging content, we ensure every campaign is tailored to your unique audience and business goals.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
     },
     whyChooseUs: {
       title: "Need for Social Media Management in Your Business",
       description:
         "In today’s competitive digital age, social presence matters more than ever. If your business fails to engage online, you’re likely to miss valuable opportunities to competitors. Nazra Software Solutions, a leading provider of social media management services in Bangalore, helps businesses with strategic content planning, audience targeting, and campaign execution—everything essential to build a strong digital identity. The true value of professional social media management lies in its ability to attract new customers while strengthening engagement with existing audiences, ensuring long-term brand success.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     },
     features: [
       {
@@ -241,13 +241,13 @@ export const services = {
       heading: "Need Powerful Professional ROI-Driven Marketing?",
       description:
         "Amazing Digital Marketing for Every Need. Our digital marketing team blends creativity with data to deliver impactful campaigns that make your brand shine online. From SEO and PPC to email marketing and content strategies, we drive growth that leaves a lasting impression. Whether you need lead generation, brand awareness, or sales conversions, we ensure every campaign is tailored to your unique business goals.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692",
     },
     whyChooseUs: {
       title: "Need for Digital Marketing in Your Business",
       description:
         "In today’s online-first world, visibility equals opportunity. If your business isn’t marketed effectively, competitors will take the lead. Nazra Software Solutions, a leading provider of digital marketing services in Bangalore, helps businesses with SEO, PPC, email, and content-driven campaigns—everything essential for building a strong digital footprint. The true value of digital marketing lies in its ability to attract qualified leads while nurturing long-term engagement, ensuring consistent growth and brand success.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
     },
     features: [
       {
@@ -326,13 +326,13 @@ export const services = {
       heading: "Experts in Indian SEO That Drive Real Results",
       description:
         "Dominate Google Rankings & Stay Ahead of Competitors. In today’s competitive digital landscape, simply having a website is not enough. To attract traffic and generate leads, your site needs to be optimized for search engines. Our SEO experts focus on optimizing meta data, URL structure, backlinks, and keyword strategy to ensure your website ranks higher and performs better. With continuous monitoring and adapting to Google’s evolving algorithms, we help your business stay visible, relevant, and ahead of the competition.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
     },
     whyChooseUs: {
       title: "Need for SEO in your Business",
       description:
         "Since most search engines display only the first 10 results, page ranking plays a critical role. If your content appears on the third or fourth page, you’re likely to miss valuable opportunities. Nazra Software Solutions, a leading provider of SEO services in Bangalore, helps businesses with strategic keyword integration, related search terms, and dynamic content strategies all essential for achieving sustainable growth through effective SEO practices. The true value of SEO lies in its ability to attract new customers while strengthening engagement with your existing audience, ensuring long-term brand success.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931",
     },
     features: [
       {
@@ -401,13 +401,13 @@ export const services = {
       heading: "Need Stunning Creative Professional Eye-Catching Graphics?",
       description:
         "Amazing Graphic Designs for Every Need. Our graphic designing team brings creativity and innovation together to deliver professional designs that make your brand stand out. From logos and banners to social media creatives and marketing materials, we craft visuals that leave a lasting impression. Whether you need business branding, digital ads, or custom graphics, we ensure every design is tailored to your unique identity and message.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166",
     },
     whyChooseUs: {
       title: "Need for Graphic Designing in Your Business",
       description:
         "In today’s competitive digital landscape, first impressions matter more than ever. If your brand visuals fail to capture attention, you’re likely to lose valuable opportunities to competitors. Nazra Software Solutions, a leading provider of graphic design services in Bangalore, helps businesses create impactful logos, branding materials, and engaging visual content—everything essential to establish a strong and memorable brand identity. The true value of professional graphic design lies in its ability to attract new audiences while strengthening brand loyalty among existing customers, ensuring long-term business success.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
     },
     features: [
       {
@@ -486,13 +486,13 @@ export const services = {
       heading: "Need Stunning Creative Professional Eye-Catching Mobile Apps?",
       description:
         "Amazing Mobile App Development for Every Need. Our mobile app development team combines innovation and technology to deliver professional apps that make your business stand out. From Android and iOS apps to hybrid and cross-platform solutions, we build applications that leave a lasting impression. Whether you need eCommerce apps, business productivity tools, or custom mobile solutions, we ensure every app is tailored to your unique goals and users.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     },
     whyChooseUs: {
       title: "Need for Mobile App Development in Your Business",
       description:
         "In today’s competitive digital world, mobile presence matters more than ever. If your business lacks a strong mobile app, you’re likely to miss valuable opportunities to competitors. Nazra Software Solutions, a leading provider of mobile app development services in Bangalore, helps businesses build scalable apps, seamless user experiences, and powerful features—everything essential to establish a strong and lasting mobile presence. The true value of professional app development lies in its ability to attract new customers while retaining existing users, ensuring long-term business success.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166",
     },
     features: [
       {
@@ -571,13 +571,13 @@ export const services = {
       heading: "High-Performance Coded eCommerce",
       description:
         "Stop losing customers to slow, generic templates. We build premium, custom eCommerce platforms that look stunning, load instantly, and give you 100% control via a powerful Admin Panel.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
     },
     whyChooseUs: {
       title: "Every Section Built to Inform and Convert",
       description:
         "We craft bespoke, lightning-fast interfaces that look premium. Every button, interaction, and layout is designed to increase conversions. Coded eCommerce is a FREE multi-vendor ecommerce software platform for everyone. You pay only when you decide to White Label or Get support from the core team.",
-      image: "",
+      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
     },
     features: [
       {

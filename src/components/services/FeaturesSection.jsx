@@ -1,60 +1,49 @@
-import { motion } from "framer-motion";
 import { Monitor, Rocket, ShieldCheck, Smartphone } from "lucide-react";
 
 const icons = [Monitor, Rocket, ShieldCheck, Smartphone];
 
 export default function FeaturesSection({ data }) {
   return (
-    <section className="py-20 lg:py-28 bg-slate-50">
+    <section className="relative py-24 bg-slate-950 text-slate-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
+        {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="inline-flex px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
-            Features
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400 bg-blue-500/5 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block">
+            Capabilities
           </span>
-
-          <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-black text-slate-900">
+          <h2 className="mt-6 text-3xl md:text-5xl font-extrabold tracking-tight text-white">
             Powerful Features For Your Business
           </h2>
-
-          <p className="mt-5 text-slate-600 text-lg">
-            Everything you need to grow your business online and stay ahead of
-            competitors.
+          <p className="mt-4 text-slate-400 text-sm md:text-base leading-relaxed font-medium">
+            Everything you need to scale your infrastructure layout online and
+            pull past competing matrices.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-16">
+        {/* FEATURES ROW GRID */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mt-16">
           {data.map((feature, index) => {
             const Icon = icons[index % icons.length];
 
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{
-                  opacity: 0,
-                  y: 30,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.1,
-                }}
-                className="bg-white rounded-[28px] p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300"
+                className="bg-slate-900/20 backdrop-blur-md rounded-2xl p-6 lg:p-7 border border-slate-900 hover:border-slate-800 transition-colors duration-300 shadow-xl flex flex-col justify-between"
               >
-                <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center">
-                  <Icon size={28} className="text-blue-600" />
+                <div>
+                  <div className="w-11 h-11 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center text-slate-400">
+                    <Icon size={18} className="text-blue-400" />
+                  </div>
+
+                  <h3 className="mt-6 text-lg font-bold tracking-tight text-white">
+                    {feature.title}
+                  </h3>
+
+                  <p className="mt-3 text-slate-400 text-xs md:text-sm leading-relaxed font-medium">
+                    {feature.description}
+                  </p>
                 </div>
-
-                <h3 className="mt-6 text-xl font-bold text-slate-900">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-3 text-slate-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>
