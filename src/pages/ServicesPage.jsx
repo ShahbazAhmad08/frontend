@@ -148,9 +148,6 @@ export default function ServicesPage() {
                         className="group-hover:translate-x-0.5 transition-transform"
                       />
                     </Link>
-                    <span className="text-[10px] font-mono font-bold text-slate-300 tracking-wider">
-                      // {service.slug.slice(0, 3).toUpperCase()}_01
-                    </span>
                   </div>
                 </motion.div>
               );
