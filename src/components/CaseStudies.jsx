@@ -1,43 +1,32 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
-const projects = [
-  {
-    title: "TG Consulting",
-    category: "Strategic Growth & Marketing",
-    image: "/projects/TGConsulting.webp",
-    stats: ["+300% Traffic", "+180% Leads", "+120% Revenue"],
-  },
-  {
-    title: "GeneHelix",
-    category: "BioTech Scale & Interface Engineering",
-    image: "/projects/genehelix.webp",
-    stats: ["+250% Reach", "+95% Conv.", "+150% Growth"],
-  },
-  {
-    title: "Quantain",
-    category: "FinTech Platform Architecture",
-    image: "/projects/Quantain.webp",
-    stats: ["+220% Engage", "+140% Leads", "+80% ROI"],
-  },
-];
+import { useState } from "react";
+import { portfolioProjects } from "../data/portfolioData";
 
 export default function PremiumCaseStudies() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
+  const [visibleProjects, setVisibleProjects] = useState(3);
 
+  // FIXED: Streamlined transitions to force instant visibility on state updates
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
+  };
+
+  const showMoreProjects = () => {
+    const currentScrollY = window.scrollY;
+
+    setVisibleProjects((prev) => prev + 3);
+
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: currentScrollY,
+        behavior: "instant",
+      });
+    });
   };
 
   return (
@@ -69,19 +58,17 @@ export default function PremiumCaseStudies() {
         </div>
 
         {/* INTERACTIVE PROJECTS GRID */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20"
-        >
-          {projects.map((project) => (
+        {/* FIXED: Removed the staggered containerVariants wrapper that was blocking runtime item reveals */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+          {portfolioProjects.slice(0, visibleProjects).map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.id || index}
               variants={cardVariants}
-              whileHover={{ y: -8 }}
-              className="group relative rounded-[24px] bg-slate-50/30 border border-slate-200 overflow-hidden hover:border-slate-300 transition-all duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.3)] flex flex-col h-full"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+              whileHover={{ y: -6 }}
+              className="group relative rounded-[24px] bg-slate-50/30 border border-slate-200 overflow-hidden hover:border-slate-300 transition-all duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.02)] flex flex-col h-full"
             >
               {/* IMAGE WRAPPER WITH CINEMATIC HOVER */}
               <div className="relative h-64 overflow-hidden bg-white">
@@ -89,53 +76,79 @@ export default function PremiumCaseStudies() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-105 filter brightness-[0.85] group-hover:brightness-100"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-104 filter brightness-[0.95] group-hover:brightness-100"
                 />
 
-                {/* Embedded High-End Action Indicator */}
-                <div className="absolute top-4 right-4 z-20 h-10 w-10 rounded-full bg-slate-50/80 border border-slate-300 backdrop-blur-md flex items-center justify-center text-slate-600 group-hover:text-white group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-300">
+                {/* Embedded External Action Indicator Badge */}
+                <a
+                  href={project.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4 z-20 h-10 w-10 rounded-full bg-white/90 border border-slate-200 backdrop-blur-md flex items-center justify-center text-slate-700 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 shadow-sm"
+                >
                   <ArrowUpRight
                     size={18}
                     className="transform group-hover:rotate-45 transition-transform duration-300"
                   />
-                </div>
+                </a>
               </div>
 
               {/* CARD INTERIOR CONTENT */}
               <div className="p-7 flex flex-col flex-grow justify-between">
                 <div>
-                  <span className="text-[11px] font-semibold text-slate-700 uppercase tracking-widest block mb-1">
+                  <span className="text-[11px] font-semibold text-blue-600 uppercase tracking-widest block mb-1.5">
                     {project.category}
                   </span>
-                  <h3 className="text-2xl font-bold tracking-tight text-black group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2">
                     {project.title}
                   </h3>
+                  <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium line-clamp-3">
+                    {project.description}
+                  </p>
 
-                  {/* METRIC BADGES ARRAY */}
+                  {/* METRIC BADGES ARRAY PARSING */}
                   <div className="flex flex-wrap gap-2 mt-6">
-                    {project.stats.map((stat) => (
+                    {project.stats.map((stat, statIdx) => (
                       <div
-                        key={stat}
-                        className="text-xs font-semibold tracking-wide text-emerald-600 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-xl flex items-center gap-1 shadow-inner"
+                        key={statIdx}
+                        className="text-[11px] font-semibold tracking-wide text-emerald-700 bg-emerald-500/5 border border-emerald-500/10 px-2.5 py-1.5 rounded-xl flex items-center gap-1.5 shadow-inner"
                       >
                         <span className="h-1 w-1 rounded-full bg-emerald-600 animate-pulse" />
-                        {stat}
+                        <span>
+                          {stat.value} {stat.label}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* VISUALIZED LOWER FOOTER BUTTON */}
-                <div className="mt-8 pt-5 border-t border-slate-200/60 flex items-center justify-between text-sm font-medium text-slate-600 group-hover:text-black transition-colors">
-                  <span>View Full Analysis</span>
-                  <span className="text-xs font-mono text-slate-600 group-hover:text-blue-600 transition-colors">
-                    CASE_ST_002
-                  </span>
+                <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-black transition-colors">
+                  <a
+                    href={project.websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 hover:text-blue-600 transition-colors"
+                  >
+                    <span>Visit Live Website</span>
+                    <ArrowUpRight size={12} />
+                  </a>
                 </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+        {/* VIEW MORE CONVERSIONS CONTROLLER BLOCK */}
+        {visibleProjects < portfolioProjects.length && (
+          <div className="flex justify-center mt-16 relative z-20">
+            <button
+              onClick={showMoreProjects}
+              className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold shadow-lg shadow-blue-600/10 hover:shadow-blue-500/20 transition-all duration-300 text-sm tracking-wide"
+            >
+              View More Projects
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

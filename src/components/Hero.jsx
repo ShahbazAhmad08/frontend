@@ -10,39 +10,56 @@ import {
   ShoppingCart,
   ArrowUpRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function PremiumHero() {
   const pills = [
-    { label: "Website Design", icon: Globe, className: "-top-6 left-12" },
-    { label: "Custom Coded Website", icon: Code, className: "top-88 -left-16" },
+    {
+      label: "Website Design",
+      icon: Globe,
+      link: "/services/website-design",
+      className: "-top-6 left-12",
+    },
+    {
+      label: "Custom Coded Website",
+      icon: Code,
+      link: "/services/custom-coded-website",
+      className: "top-88 -left-16",
+    },
     {
       label: "Social Media Management",
       icon: BarChart3,
+      link: "/services/social-media-management",
       className: "top-44 -right-12",
     },
     {
       label: "Digital Marketing",
       icon: TrendingUp,
+      link: "/services/digital-marketing",
       className: "bottom-48 -right-16",
     },
     {
       label: "Search Engine Optimisation",
       icon: Search,
+      link: "/services/search-engine-optimisation",
       className: "-bottom-4 left-1/3",
     },
     {
       label: "Graphics Designing",
       icon: Palette,
+      link: "/services/graphics-designing",
       className: "top-15 -left-20",
     },
     {
       label: "Mobile App Development",
       icon: Smartphone,
+      link: "/services/mobile-app-development",
       className: "bottom-88 -left-12",
     },
     {
       label: "Coded E-Commerce Website",
       icon: ShoppingCart,
+      link: "/services/coded-e-commerce-website",
       className: "top-8 -right-20",
     },
   ];
@@ -117,17 +134,23 @@ export default function PremiumHero() {
               variants={itemVariants}
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
-              <button className="group relative bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 hover:shadow-blue-500/30 overflow-hidden">
-                <span>Get a Free Strategy Call</span>
-                <ArrowUpRight
-                  size={16}
-                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                />
-              </button>
+              {/* Native Phone Trigger for Strategy Call */}
+              <a href="tel:+919449617399" className="flex-1 sm:flex-initial">
+                <button className="w-full group relative bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 hover:shadow-blue-500/30 overflow-hidden">
+                  <span>Get a Free Strategy Call</span>
+                  <ArrowUpRight
+                    size={16}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  />
+                </button>
+              </a>
 
-              <button className="border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-black px-8 py-4 rounded-xl font-medium backdrop-blur-sm transition-all duration-300 text-sm">
-                Explore All Services
-              </button>
+              {/* Internal Single-Page-App Routing to Services page */}
+              <Link to="/services" className="flex-1 sm:flex-initial">
+                <button className="w-full border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-black px-8 py-4 rounded-xl font-medium backdrop-blur-sm transition-all duration-300 text-sm flex items-center justify-center">
+                  Explore All Services
+                </button>
+              </Link>
             </motion.div>
 
             {/* Trust Matrix */}
@@ -159,7 +182,7 @@ export default function PremiumHero() {
             className="lg:col-span-7 relative"
           >
             {/* Fluid Moving Service Badge Grid (Lg Screens Only) */}
-            <div className="hidden lg:block absolute inset-0 pointer-events-none">
+            <div className="hidden lg:block absolute inset-0 ">
               {pills.map((pill, index) => {
                 const Icon = pill.icon;
                 return (
@@ -171,14 +194,19 @@ export default function PremiumHero() {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className={`absolute ${pill.className} bg-slate-900/70 backdrop-blur-md border border-slate-800/80 px-4 py-2.5 rounded-full shadow-2xl shadow-black/40 flex items-center gap-2.5 z-20 hover:border-blue-500/50 transition-colors duration-300`}
+                    className={`absolute ${pill.className} bg-slate-900/70 backdrop-blur-md border border-slate-800/80 rounded-full shadow-2xl shadow-black/40 flex items-center gap-2.5 z-20 hover:border-blue-500/50 transition-colors duration-300`}
                   >
-                    <div className="p-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400">
-                      <Icon size={14} />
-                    </div>
-                    <span className="text-xs font-semibold tracking-wide text-slate-200">
-                      {pill.label}
-                    </span>
+                    <Link
+                      to={pill.link}
+                      className="flex items-center gap-2.5 bg-slate-900/70 backdrop-blur-md border border-slate-800/80 px-4 py-2.5 rounded-full shadow-2xl shadow-black/40 hover:border-blue-500/50 transition-all duration-300"
+                    >
+                      <div className="p-1 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                        <Icon size={14} />
+                      </div>
+                      <span className="text-xs font-semibold tracking-wide text-slate-200">
+                        {pill.label}
+                      </span>
+                    </Link>
                   </motion.div>
                 );
               })}

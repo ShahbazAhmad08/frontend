@@ -21,7 +21,7 @@ const PremiumContact = () => {
     "bg-slate-50 backdrop-blur-xl border border-slate-200 rounded-[28px] p-6 lg:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-slate-300 transition-all duration-300 relative overflow-hidden group";
 
   return (
-    <section className="relative py-28 lg:py-36 bg-white text-black overflow-hidden">
+    <section className="relative py-28 mr-4 lg:mr-0 lg:py-36 bg-white text-black overflow-hidden">
       {/* Decorative High-End Core Lighting Orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 blur-[140px] rounded-full pointer-events-none mix-blend-screen" />
 

@@ -55,7 +55,7 @@ export default function PremiumTestimonials() {
               className="bg-transparent backdrop-blur-md rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:border-slate-800 transition-all duration-300 shadow-2xl relative group"
             >
               <Quote
-                className="absolute top-6 right-6 text-black pointer-events-none"
+                className="absolute top-2 right-2 text-black pointer-events-none"
                 size={32}
                 strokeWidth={1}
               />

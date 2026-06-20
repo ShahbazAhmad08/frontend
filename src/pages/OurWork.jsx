@@ -3,6 +3,7 @@ import PremiumStats from "../components/Stats"; // Reusing your high-fidelity pr
 import PortfolioProjectCard from "../components/PortfolioProjectCard";
 import PremiumContact from "../components/Contact";
 import PremiumFadeUp from "../components/FadeUp";
+import PremiumPortfolioMarquee from "../components/PremiumPortfolioMarquee";
 import { portfolioProjects } from "../data/portfolioData";
 
 const OurWork = () => {
@@ -14,6 +15,9 @@ const OurWork = () => {
       {/* 02. METRIC DATA TELEMETRY OVERLAY BAR */}
       <PremiumFadeUp delay={0.1}>
         <PremiumStats />
+      </PremiumFadeUp>
+      <PremiumFadeUp delay={0.1}>
+        <PremiumPortfolioMarquee />
       </PremiumFadeUp>
 
       {/* 03. CASE STUDIES FLOW MATRIX */}

@@ -53,7 +53,7 @@ const PortfolioProjectCard = ({ project, index }) => {
             rel="noreferrer"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 shadow-md shadow-blue-600/10"
           >
-            <span>Launch Deployment</span>
+            <span>Visit Website</span>
             <ArrowUpRight
               size={14}
               className="transform group-hover:rotate-45 transition-transform"

@@ -26,6 +26,7 @@ export const navigation = [
 
   {
     title: "Services",
+    path: "/services",
     dropdown: true,
     items: [
       {

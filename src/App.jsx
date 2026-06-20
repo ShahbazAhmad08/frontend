@@ -8,6 +8,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
 import ServicePage from "./pages/ServicePage";
 import { services } from "./data/services";
+import ServicesPage from "./pages/ServicesPage";
+import LegalDocumentPage from "./pages/LegalDocumentPage";
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,8 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+
           <Route
             path="/services/website-design"
             element={<ServicePage data={services.websiteDesign} />}
@@ -57,6 +61,12 @@ function App() {
             path="/services/coded-e-commerce-website"
             element={<ServicePage data={services.codedEcommerceWebsite} />}
           />
+          <Route path="/terms" element={<LegalDocumentPage type="terms" />} />
+          <Route
+            path="/privacy"
+            element={<LegalDocumentPage type="privacy" />}
+          />
+          <Route path="/refund" element={<LegalDocumentPage type="refund" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

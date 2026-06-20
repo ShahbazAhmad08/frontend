@@ -1,5 +1,5 @@
 import PremiumHero from "../components/Hero";
-import PremiumTrustedBrands from "../components/TrustedBrands";
+import TrustedBrands from "../components/TrustedBrands";
 import PremiumServices from "../components/Services";
 import PremiumWhyChooseUs from "../components/WhyChooseUs";
 import PremiumStats from "../components/Stats";
@@ -9,16 +9,19 @@ import PremiumCTA from "../components/CTA";
 import FAQ from "../components/FAQ";
 import PremiumContact from "../components/Contact";
 import PremiumFadeUp from "../components/FadeUp"; // Using your optimized physics wrapper
-
+import PremiumTrustedBrands from "../components/PremiumTrustedBrands";
 export default function Home() {
   return (
     <main className="overflow-hidden bg-white min-h-screen text-black selection:bg-blue-500/20 selection:text-blue-600">
       {/* 01. HERO FRAME (No delay wrapper needed as it mounts instantly at top-of-fold) */}
       <PremiumHero />
 
-      {/* 02. TRUSTED MARQUEE TICKER */}
       <PremiumFadeUp delay={0.1}>
         <PremiumTrustedBrands />
+      </PremiumFadeUp>
+      {/* 02. TRUSTED MARQUEE TICKER */}
+      <PremiumFadeUp delay={0.1}>
+        <TrustedBrands />
       </PremiumFadeUp>
 
       {/* 03. SERVICES BENTO GRID SYSTEM */}
