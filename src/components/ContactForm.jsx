@@ -6,20 +6,27 @@ import { useState } from "react";
 const ContactForm = ({ cardClass, fadeUp }) => {
   const [token, setToken] = useState(null);
 
-  // High-end input styling class variable
   const inputClass =
-    "w-full bg-slate-50 border border-slate-300 text-black rounded-xl px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600/30 font-medium text-sm";
+    "w-full bg-slate-50 border border-slate-300 text-black rounded-xl px-4 py-3 sm:py-3.5 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600/30 font-medium text-sm";
+
+  // Strip out native padding values on mobile layout layers to prevent container overflow leaks
+  const cleanCardClass = cardClass
+    ? cardClass.replace(/p-\d|lg:p-\d/g, "").trim()
+    : "";
 
   return (
-    <motion.div variants={fadeUp} className={cardClass}>
+    <motion.div
+      variants={fadeUp}
+      className={`${cleanCardClass} p-4 sm:p-6 lg:p-8 w-full box-border`}
+    >
       {/* Decorative localized light streak */}
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 blur-[60px] rounded-full pointer-events-none" />
 
-      <div className="mb-8 relative z-10">
+      <div className="mb-6 sm:mb-8 relative z-10">
         <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">
           Schedule a Free Consultation
         </span>
-        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-black mt-2">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-black mt-1.5">
           Let's Talk About Your Project
         </h2>
       </div>
@@ -64,13 +71,15 @@ const ContactForm = ({ cardClass, fadeUp }) => {
           className={`${inputClass} resize-none`}
         />
 
-        {/* Cloudflare Turnstile Verification */}
-        <div className="border border-slate-200 bg-slate-50 rounded-xl p-3.5 flex justify-center items-center backdrop-blur-md">
-          <Turnstile
-            siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-            onSuccess={(token) => setToken(token)}
-            options={{ theme: "light" }}
-          />
+        {/* 💡 FIXED: Cloudflare Turnstile responsive containment matrix to prevent layout leaks */}
+        <div className="border border-slate-200 bg-slate-50 rounded-xl p-2 sm:p-3.5 flex justify-center items-center backdrop-blur-md overflow-hidden max-w-full">
+          <div className="scale-90 xs:scale-100 origin-center">
+            <Turnstile
+              siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+              onSuccess={(token) => setToken(token)}
+              options={{ theme: "light" }}
+            />
+          </div>
         </div>
 
         <button
