@@ -11,7 +11,7 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
-import { services } from "../data/services"; // Adjust path to your services file
+import { services } from "../data/services";
 import Contact from "../components/Contact";
 
 // Maps data keys to high-end Lucide icon variants dynamically
@@ -25,6 +25,20 @@ const iconMap = {
   mobileAppDevelopment: Smartphone,
   codedEcommerceWebsite: Code,
   wordpressWebsiteDevelopment: Code,
+};
+
+// 💡 FIXED: Direct path dictionary translations to handle specific non-standard kebab formatting rules
+const specialUrlOverrides = {
+  codedEcommerceWebsite: "coded-e-commerce-website",
+  searchEngineOptimization: "search-engine-optimisation", // Handles s vs z variance automatically
+};
+
+const convertToKebabCase = (slug) => {
+  // If the key lives in our explicit override map, return it instantly
+  if (specialUrlOverrides[slug]) return specialUrlOverrides[slug];
+
+  // Fallback to standard camel to kebab regex handling rules
+  return slug.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 };
 
 const containerVariants = {
@@ -116,15 +130,15 @@ export default function ServicesPage() {
                     {/* Content */}
                     <div className="space-y-2">
                       <h3 className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-700 transition-colors">
-                        {service.hero.badge}
+                        {service.hero?.badge || service.title}
                       </h3>
                       <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium line-clamp-3">
-                        {service.hero.description}
+                        {service.hero?.description}
                       </p>
                     </div>
                   </div>
 
-                  {/* Dynamic Inner Feature Micro Pills (Shows first 2 features as dynamic tags) */}
+                  {/* Dynamic Inner Feature Micro Pills */}
                   <div className="mt-6 flex flex-wrap gap-1.5">
                     {service.features?.slice(0, 2).map((feat, i) => (
                       <span
@@ -139,7 +153,7 @@ export default function ServicesPage() {
                   {/* Route Dynamic Call to Action Link */}
                   <div className="mt-8 pt-4 border-t border-slate-150 flex items-center justify-between">
                     <Link
-                      to={`/services/${service.slug}`}
+                      to={`/services/${convertToKebabCase(service.slug)}`}
                       className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 group-hover:text-blue-600 transition-colors"
                     >
                       <span>Explore Capability</span>
