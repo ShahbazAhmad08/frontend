@@ -29,7 +29,7 @@ export default function ContactPopup() {
         <>
           {/* Glass Overlay Backdrop Blur */}
           <div
-            className="fixed inset-0 bg-slate-900/30 backdrop-blur-[2px] z-[9998] transition-opacity duration-300"
+            className="fixed inset-0 bg-slate-900/30 backdrop-blur-[2px] z-9998 transition-opacity duration-300"
             onClick={() => setIsOpen(false)} // Clicking outside closes it too
           />
 

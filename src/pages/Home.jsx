@@ -8,12 +8,14 @@ import PremiumTestimonials from "../components/Testimonials";
 import PremiumCTA from "../components/CTA";
 import FAQ from "../components/FAQ";
 import PremiumContact from "../components/Contact";
-import PremiumFadeUp from "../components/FadeUp"; // Using your optimized physics wrapper
+import PremiumFadeUp from "../components/FadeUp";
 import PremiumTrustedBrands from "../components/PremiumTrustedBrands";
+
 export default function Home() {
   return (
     <main className="overflow-hidden bg-white min-h-screen text-black selection:bg-blue-500/20 selection:text-blue-600">
       {/* 01. HERO FRAME (No delay wrapper needed as it mounts instantly at top-of-fold) */}
+
       <PremiumHero />
 
       <PremiumFadeUp delay={0.1}>

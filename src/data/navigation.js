@@ -14,7 +14,7 @@ export const navigation = [
       },
       {
         title: "Company Profile",
-        path: "/company-profile",
+        path: "/V3-Nazra_Software_Solutions-Brochure-v0.2.pdf",
       },
     ],
   },

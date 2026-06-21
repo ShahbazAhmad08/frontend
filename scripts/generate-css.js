@@ -1,27 +1,27 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Import COLORS from theme.js
-const themePath = path.join(__dirname, '../src/constants/theme.js');
-const themeContent = fs.readFileSync(themePath, 'utf-8');
+const themePath = path.join(__dirname, "../src/constants/theme.js");
+const themeContent = fs.readFileSync(themePath, "utf-8");
 
 // Extract COLORS object from theme.js
 const colorMatch = themeContent.match(/export const COLORS = \{([\s\S]*?)\}/);
 if (!colorMatch) {
-  console.error('Could not find COLORS export in theme.js');
+  console.error("Could not find COLORS export in theme.js");
   process.exit(1);
 }
 
 // Parse colors
 const colors = {};
-const colorLines = colorMatch[1].split('\n');
-colorLines.forEach(line => {
+const colorLines = colorMatch[1].split("\n");
+colorLines.forEach((line) => {
   const match = line.match(/(\w+):\s*"(#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3})"/);
   if (match) {
     const [, key, value] = match;
@@ -30,12 +30,12 @@ colorLines.forEach(line => {
 });
 
 // Generate CSS variables
-let cssVariables = ':root {\n  /* Theme Colors as CSS Custom Properties */\n';
+let cssVariables = ":root {\n  /* Theme Colors as CSS Custom Properties */\n";
 Object.entries(colors).forEach(([key, value]) => {
-  const cssVar = `--color-${key.replace(/([A-Z])/g, '-$1').toLowerCase()}`;
+  const cssVar = `--color-${key.replace(/([A-Z])/g, "-$1").toLowerCase()}`;
   cssVariables += `  ${cssVar}: ${value.toLowerCase()};\n`;
 });
-cssVariables += '}\n';
+cssVariables += "}\n";
 
 // Generate utility classes
 const utilityClasses = `
@@ -72,8 +72,8 @@ const utilityClasses = `
 `;
 
 // Write globals.css
-const globalsPath = path.join(__dirname, '../src/globals.css');
+const globalsPath = path.join(__dirname, "../src/globals.css");
 const globalsCss = cssVariables + utilityClasses;
-fs.writeFileSync(globalsPath, globalsCss, 'utf-8');
+fs.writeFileSync(globalsPath, globalsCss, "utf-8");
 
-console.log('✅ globals.css generated from theme.js');
+// console.log('✅ globals.css generated from theme.js');

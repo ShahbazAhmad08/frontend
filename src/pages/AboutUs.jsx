@@ -8,6 +8,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import Contact from "../components/Contact";
+import CoreEngineering from "../components/CoreEngineering";
+import Partners from "../components/Partners";
 
 const premiumFadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -139,7 +141,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-
+      <Partners />
       {/* ================= SECTION 2: THE DATA TELEMETRY MATRIX ================= */}
       <section className="py-20 border-t border-slate-200/60 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -298,195 +300,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* ======================= FOUNDERS & EXECUTIVE HUB ======================== */}
-      {/* ========================================================================= */}
-      <section className="py-24 lg:py-32 bg-white border-t border-slate-100 relative overflow-hidden">
-        {/* Soft Ambient Radial Backing Aura */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="space-y-20 lg:space-y-28">
-            {/* FOUNDER CARD 1: LEFT IMAGE | RIGHT CONTENT */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center"
-            >
-              <div className="lg:col-span-5 relative group">
-                <div className="absolute inset-0 bg-blue-600/5 rounded-[32px] translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300" />
-                <div className="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 aspect-square lg:aspect-[4/5] shadow-sm">
-                  <img
-                    src="/team/founder.jpg"
-                    alt="Founder Name"
-                    className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.01] group-hover:scale-102 transition-transform duration-700"
-                  />
-                </div>
-              </div>
-              <div className="lg:col-span-7 space-y-6 text-left">
-                <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">
-                  <span>Executive Leadership</span>
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
-                  Meet Our Founder
-                </h2>
-                <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-                  Configuring scalable global strategies and orchestrating
-                  structural technical ecosystems since foundation inception.
-                  Dedicated to matching absolute transparency with programmatic
-                  execution mechanics.
-                </p>
-                <div className="pt-2 border-l-2 border-blue-600 pl-4 font-mono text-xs text-slate-500 tracking-wide uppercase">
-                  Nazra Executive Node // Core_Alpha
-                </div>
-              </div>
-            </motion.div>
-
-            {/* FOUNDER CARD 2: RIGHT IMAGE | LEFT CONTENT */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center"
-            >
-              <div className="lg:col-span-7 order-2 lg:order-1 space-y-6 text-left">
-                <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">
-                  <span>Operational Direction</span>
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
-                  Meet Our Co-Founder
-                </h2>
-                <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-                  Driving operational performance growth tracks and validating
-                  system metrics. Overseeing end-to-end user growth vectors to
-                  guarantee sustainable target results across local and global
-                  clusters.
-                </p>
-                <div className="pt-2 border-l-2 border-blue-600 pl-4 font-mono text-xs text-slate-500 tracking-wide uppercase">
-                  Nazra Executive Node // Operations_Beta
-                </div>
-              </div>
-              <div className="lg:col-span-5 order-1 lg:order-2 relative group">
-                <div className="absolute inset-0 bg-blue-600/5 rounded-[32px] -translate-x-4 translate-y-4 -z-10 group-hover:-translate-x-2 group-hover:translate-y-2 transition-transform duration-300" />
-                <div className="rounded-[32px] overflow-hidden border border-slate-200 bg-slate-50 aspect-square lg:aspect-[4/5] shadow-sm">
-                  <img
-                    src="/team/co-founder.jpg"
-                    alt="Co-Founder Name"
-                    className="w-full h-full object-cover filter brightness-[0.98] contrast-[1.01] group-hover:scale-102 transition-transform duration-700"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* ========================= CORE ENGINEERING MATRIX ======================= */}
-      {/* ========================================================================= */}
-      <section className="py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          {/* TEAM CORE HEADER */}
-          <div className="max-w-3xl mb-16 lg:mb-20 text-left">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-700 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full inline-block">
-              Our Team
-            </span>
-            <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
-              The People Behind Your Growth
-            </h2>
-            <p className="mt-4 text-slate-600 text-sm md:text-base leading-relaxed font-medium">
-              50+ specialists who eat, breathe, and sleep digital strategy. No
-              generalists. No interns managing your campaigns.
-            </p>
-          </div>
-
-          {/* RESPONSIBLY SEGMENTED 4-COLUMN TEAM GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                name: "Mohammad Amaan",
-                role: "Software Engineer & Tech Lead",
-                desc: "Leading teams, designing scalable architecture, and writing clean, efficient code to solve complex problems.",
-                stack: ["System Design", "Scalability", "Clean Code"],
-              },
-              {
-                name: "Faiz Akhter",
-                role: "Mobile Application Developer",
-                desc: "Mobile & Web Developer turning complex problems into elegant, high-performance applications.",
-                stack: ["React Native", "Node.js", "MongoDB", "React.js"],
-              },
-              {
-                name: "md umar",
-                role: "Web Developer",
-                desc: "Efficient web applications from frontend to backend. Turning complex problems into scalable code.",
-                stack: ["Node.js", "MongoDB", "React.js", "Express.js"],
-              },
-              {
-                name: "Anshuman Singh",
-                role: "AI Agents & Automation Developer",
-                desc: "Engineering autonomous workflows and intelligent full-stack applications that make software smarter and faster.",
-                stack: ["LLM Integration", "AI Workflows", "Automation"],
-              },
-              {
-                name: "Shahbaz Ahmad",
-                role: "MERN Stack Developer",
-                desc: "React.js & MERN Stack Developer passionate about building scalable web applications and intuitive experiences.",
-                stack: [
-                  "Node.js",
-                  "MongoDB",
-                  "React.js",
-                  "Express.js",
-                  "React Native",
-                ],
-              },
-            ].map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.01)] hover:shadow-[0_20px_40px_rgba(29,78,216,0.03)] hover:border-blue-500/20 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Subtle Top Node Header Indicator */}
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 tracking-wider">
-                      // ENG_CORE_0{index + 1}
-                    </span>
-                    <span className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
-                  </div>
-
-                  <h3 className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-blue-700 transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs font-bold text-blue-700 mt-1 uppercase tracking-wide">
-                    {member.role}
-                  </p>
-                  <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed font-medium">
-                    {member.desc}
-                  </p>
-                </div>
-
-                {/* HORIZONTAL METRIC MICRO SKILL STACK PILLS */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                  {member.stack.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-[10px] font-semibold text-slate-600 bg-slate-100 border border-slate-200/60 px-2 py-0.5 rounded-md"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CoreEngineering />
       {/* Renders your high-fidelity premium contact systems directly down-fold */}
       <Contact />
     </div>

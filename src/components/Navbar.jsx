@@ -9,6 +9,13 @@ export default function PremiumNavbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
 
+  const [prevPath, setPrevPath] = useState(location.pathname);
+
+  if (location.pathname !== prevPath) {
+    setPrevPath(location.pathname);
+    setMobileMenuOpen(false);
+    setOpenDropdown(null);
+  }
   // Prevents parent background body scroll leakage when mobile screen mode is toggled active
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -22,10 +29,10 @@ export default function PremiumNavbar() {
   }, [mobileMenuOpen]);
 
   // Collapse active menus instantly upon component window path updates
-  useEffect(() => {
-    setMobileMenuOpen(false);
-    setOpenDropdown(null);
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   setMobileMenuOpen(false);
+  //   setOpenDropdown(null);
+  // }, [location.pathname]);
 
   return (
     <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl bg-white/80 backdrop-blur-xl border border-slate-200 rounded-2xl lg:rounded-full shadow-[0_24px_50px_-12px_rgba(0,0,0,0.1)] text-black">
@@ -83,6 +90,16 @@ export default function PremiumNavbar() {
                             <Link
                               key={subItem.title}
                               to={subItem.path}
+                              target={
+                                subItem.title === "Company Profile"
+                                  ? "_blank"
+                                  : null
+                              }
+                              rel={
+                                subItem.title === "Company Profile"
+                                  ? "noopener noreferrer"
+                                  : null
+                              }
                               className="group/item flex flex-col p-3 rounded-xl hover:bg-slate-100 transition-colors duration-200"
                             >
                               <div className="flex items-center justify-between">

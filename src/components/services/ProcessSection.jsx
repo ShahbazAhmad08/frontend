@@ -1,5 +1,5 @@
 export default function ProcessSection({ data }) {
-  console.log("ProcessSection data:", data); // Debugging line to check the data structure
+  // console.log("ProcessSection data:", data); // Debugging line to check the data structure
   return (
     <section className="relative py-24 bg-white text-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
