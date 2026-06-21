@@ -52,5 +52,6 @@ export const fetchContactMessages = async () => {
  */
 export const executeSignOut = () => {
   localStorage.removeItem("adminToken");
+  localStorage.removeItem("adminProfile");
   window.location.href = "/login";
 };

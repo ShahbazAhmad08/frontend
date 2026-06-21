@@ -6,6 +6,7 @@ import { useState, useTransition } from "react";
 const ContactForm = ({ cardClass, fadeUp }) => {
   const [token, setToken] = useState(null);
   const [isPending, startTransition] = useTransition();
+  const BASE_API_URL = import.meta.env.VITE_BACKEND_URL;
 
   // Controlled State Elements linked to database expectations
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ const ContactForm = ({ cardClass, fadeUp }) => {
 
     startTransition(async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/contacts", {
+        const res = await fetch(`${BASE_API_URL}/contacts`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           // Send name, email, and bundle information into the expected backend format

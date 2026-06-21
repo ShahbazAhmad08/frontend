@@ -15,7 +15,9 @@ export default function AdminLogin() {
     startTransition(async () => {
       try {
         const data = await executeAdminLogin(email, password);
+        console.log(data);
         localStorage.setItem("adminToken", data.token);
+        localStorage.setItem("adminProfile", JSON.stringify(data.admin));
         window.location.href = "/admin";
       } catch (err) {
         setError(err.message || "Could not connect to backend server.");
