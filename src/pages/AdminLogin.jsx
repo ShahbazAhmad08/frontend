@@ -37,7 +37,7 @@ export default function AdminLogin() {
             Control Portal
           </span>
           <h2 className="mt-4 text-2xl font-extrabold text-white tracking-tight">
-            EXCELLENCE ADMIN PANEL
+            Nazra Software ADMIN PANEL
           </h2>
         </div>
 
