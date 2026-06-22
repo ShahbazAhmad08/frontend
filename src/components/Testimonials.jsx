@@ -1,43 +1,20 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-
-const reviews = [
-  {
-    name: "John Smith",
-    role: "Managing Director",
-    company: "TG Consulting",
-    review:
-      "Nazra completely transformed our technical online footprint, building an elite ecosystem that safely aggregates high-intent lead generations consistently.",
-  },
-  {
-    name: "Sarah Khan",
-    role: "Operations Head",
-    company: "GeneHelix",
-    review:
-      "An exceptionally professional development team. Their transparent analytics updates, code reliability, and strategic communication infrastructure are unmatched.",
-  },
-  {
-    name: "Michael Lee",
-    role: "Chief Marketing Officer",
-    company: "Quantain",
-    review:
-      "Our core performance velocity and customer conversions surged exponentially within initial quarters. A definitive growth partner.",
-  },
-];
+import { reviews } from "../data/testimonials";
 
 export default function PremiumTestimonials() {
   return (
-    <section className="relative py-28 lg:py-36  bg-slate-100 text-slate-950 overflow-hidden">
+    <section className="relative py-28 lg:py-36 bg-slate-100 text-slate-950 overflow-hidden">
       {/* Structural Ambient Background Light */}
-      <div className="absolute top-1/2 left-1/4 w-[600px] h-[300px] bg-blue-500/[0.02] blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[300px] bg-blue-500/[0.03] blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* SECTION HEADER */}
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 bg-gray-600/30 border border-blue-500/10 px-4 py-1.5 rounded-full inline-block">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600 bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full inline-block">
             Verified Outcomes
           </span>
-          <h2 className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-blue-400 leading-tight">
+          <h2 className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
             Trusted by Leaders at High-Velocity Brands
           </h2>
         </div>
@@ -52,32 +29,54 @@ export default function PremiumTestimonials() {
               viewport={{ once: true, margin: "-20px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -6 }}
-              className="bg-transparent backdrop-blur-md rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:border-slate-800 transition-all duration-300 shadow-2xl relative group"
+              className="bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:border-blue-300 transition-all duration-300 shadow-xl shadow-slate-200/50 relative group"
             >
               <Quote
-                className="absolute top-2 right-2 text-black pointer-events-none"
+                className="absolute top-4 right-4 text-slate-200 group-hover:text-blue-100 transition-colors pointer-events-none"
                 size={32}
-                strokeWidth={1}
+                strokeWidth={1.5}
               />
 
-              <p className="text-slate-900 text-sm md:text-base leading-relaxed font-medium relative z-10">
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed font-normal relative z-10">
                 "{review.review}"
               </p>
 
-              <div className="mt-8 pt-6 border-t border-slate-900/80 flex items-center gap-3">
-                <div className="h-9 w-9 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-xs font-bold font-mono text-slate-400">
-                  {review.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
-                <div className="cursor-pointer">
-                  <h4 className="font-bold text-sm text-blue-600 group-hover:text-blue-400 transition-colors">
+              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-3">
+                {/* Dynamically checks for Image vs Initial Initials fallback */}
+                {review.image ? (
+                  <img
+                    src={review.image}
+                    alt={review.name}
+                    className="h-10 w-10 rounded-full object-cover border border-slate-200"
+                    onError={(e) => {
+                      // Fallback protection just in case a path breaks
+                      e.target.style.display = "none";
+                    }}
+                  />
+                ) : (
+                  <div className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center text-xs font-bold font-mono text-slate-200 shrink-0">
+                    {review.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                )}
+
+                <div>
+                  <h4 className="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors">
                     {review.name}
                   </h4>
-                  <p className="text-[11px] text-slate-600 font-medium tracking-wide mt-0.5">
-                    {review.role} ·{" "}
-                    <span className="text-slate-700">{review.company}</span>
+                  <p className="text-[11px] text-slate-500 font-medium tracking-wide mt-0.5">
+                    {review.role}
+                    {review.company && (
+                      <>
+                        {" "}
+                        ·{" "}
+                        <span className="text-blue-600 font-semibold">
+                          {review.company}
+                        </span>
+                      </>
+                    )}
                   </p>
                 </div>
               </div>

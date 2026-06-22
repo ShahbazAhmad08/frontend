@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function PremiumCTA() {
   return (
@@ -57,7 +58,10 @@ export default function PremiumCTA() {
 
           {/* ACTIONS HUB */}
           <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <button className="group relative inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold tracking-wide text-sm shadow-xl shadow-blue-600/10 hover:shadow-blue-700/20 transition-all duration-300">
+            <Link
+              to="/contact"
+              className="group relative inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold tracking-wide text-sm shadow-xl shadow-blue-600/10 hover:shadow-blue-700/20 transition-all duration-300"
+            >
               <span>Book an Expert Call</span>
               <div className="w-5 h-5 rounded-md bg-blue-700/80 group-hover:bg-blue-700 text-white flex items-center justify-center transition-colors">
                 <ArrowRight
@@ -65,17 +69,16 @@ export default function PremiumCTA() {
                   className="group-hover:translate-x-0.5 transition-transform"
                 />
               </div>
-            </button>
+            </Link>
 
-            <button className="inline-flex items-center justify-center border border-slate-300 bg-white/40 hover:bg-slate-50 text-slate-600 hover:text-black px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-300 backdrop-blur-sm">
+            {/* View Success Stories (Navigates to internal route) */}
+            <Link
+              to="/client-testimonials"
+              className="inline-flex items-center justify-center border border-slate-300 bg-white/40 hover:bg-slate-50 text-slate-600 hover:text-black px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-300 backdrop-blur-sm text-center"
+            >
               View Success Stories
-            </button>
+            </Link>
           </div>
-        </div>
-
-        {/* Premium Cryptographic Serial Footer tag */}
-        <div className="absolute bottom-4 right-6 hidden lg:block text-[10px] font-mono text-slate-500 select-none">
-          SYS_NODE_OP_FALLBACK_OK
         </div>
       </motion.div>
     </section>

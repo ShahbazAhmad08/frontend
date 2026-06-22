@@ -1,6 +1,56 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { portfolioProjects } from "../data/portfolioData";
+import { useEffect, useState, useRef } from "react";
+import { animate, useInView } from "framer-motion";
+
+const footerStats = [
+  {
+    number: 5,
+    prefix: "",
+    suffix: "+ Years",
+    label: "Proven Track Record",
+  },
+  {
+    number: 99,
+    prefix: "",
+    suffix: "%",
+    label: "Customer Satisfaction",
+  },
+  {
+    number: 100,
+    prefix: "",
+    suffix: "+",
+    label: "Projects Completed",
+  },
+  {
+    number: 4,
+    prefix: "",
+    suffix: " Mins",
+    label: "Average Answer Time",
+  },
+];
+
+// Reusable Counter component that triggers on scroll view
+function Counter({ from, to }) {
+  const [count, setCount] = useState(from);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const controls = animate(from, to, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate: (value) => setCount(Math.floor(value)),
+    });
+
+    return () => controls.stop();
+  }, [from, to, isInView]);
+
+  return <span ref={ref}>{count}</span>;
+}
 
 const clients = [
   { name: "innzoy", logo: "/clients/Client9.png" },
@@ -97,40 +147,26 @@ export default function PremiumPortfolioMarquee() {
       </div>
 
       {/* CORE BASE parameter metric counter block */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 border-t border-slate-100 mt-24 pt-12 text-center relative z-10">
-        <div>
-          <span className="block text-4xl font-black text-slate-950 tracking-tight">
-            5+ Years
-          </span>
-          <span className="text-xs font-semibold text-slate-500 tracking-wider uppercase mt-1 block">
-            Proven Track Record
-          </span>
-        </div>
-        <div>
-          <span className="block text-4xl font-black text-slate-950 tracking-tight">
-            99%
-          </span>
-          <span className="text-xs font-semibold text-slate-500 tracking-wider uppercase mt-1 block">
-            Customer Satisfaction
-          </span>
-        </div>
-        <div>
-          <span className="block text-4xl font-black text-slate-950 tracking-tight">
-            100+
-          </span>
-          <span className="text-xs font-semibold text-slate-500 tracking-wider uppercase mt-1 block">
-            Projects Completed
-          </span>
-        </div>
-        <div>
-          <span className="block text-4xl font-black text-slate-950 tracking-tight">
-            4 Mins
-          </span>
-          <span className="text-xs font-semibold text-slate-500 tracking-wider uppercase mt-1 block">
-            Average Answer Time
-          </span>
-        </div>
-      </div>
+      <FooterStatsRow />
     </section>
+  );
+}
+
+function FooterStatsRow() {
+  return (
+    <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 border-t border-slate-100 mt-24 pt-12 text-center relative z-10">
+      {footerStats.map((item) => (
+        <div key={item.label} className="shadow-lg pb-6">
+          <span className="block text-4xl font-black text-slate-950 tracking-tight ">
+            {item.prefix}
+            <Counter from={0} to={item.number} />
+            {item.suffix}
+          </span>
+          <span className="text-xs font-semibold text-slate-500 tracking-wider uppercase mt-1 block">
+            {item.label}
+          </span>
+        </div>
+      ))}
+    </div>
   );
 }

@@ -14,6 +14,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminLogin from "./pages/AdminLogin";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
+import ClientTestimonials from "./pages/ClientTestimonials";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/our-work" element={<OurWork />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/client-testimonials" element={<ClientTestimonials />} />
 
           <Route
             path="/services/website-design"

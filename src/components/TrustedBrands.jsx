@@ -19,7 +19,7 @@ export default function PremiumTrustedBrands() {
   return (
     <section className="py-16 lg:py-20 bg-white border-y border-slate-200/60 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-[11px] text-slate-700 font-bold tracking-[0.25em] uppercase mb-12">
+        <p className="text-center text-[15px] text-slate-700 font-extrabold tracking-[0.25em] uppercase mb-12">
           Engineered Integrations & Global Ecosystem Alignment
         </p>
 

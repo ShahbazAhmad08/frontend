@@ -20,7 +20,7 @@ export default function PremiumTrustedBrands() {
     <section className="py-16 lg:py-20 bg-white  overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header Block */}
-        <p className="text-center text-[11px] text-slate-700 font-bold tracking-[0.25em] uppercase mb-12">
+        <p className="text-center text-[15px] text-slate-700 font-extrabold tracking-[0.25em] uppercase mb-12">
           Our Clients & Strategic Partners
         </p>
 
@@ -38,7 +38,7 @@ export default function PremiumTrustedBrands() {
             {doubleClients.map((client, index) => (
               <div
                 key={index}
-                className="h-10 md:h-12 w-12 md:w-26 flex items-center justify-center  cursor-default select-none"
+                className="h-16 md:h-20 w-auto flex items-center justify-center cursor-default select-none px-4"
               >
                 <img
                   src={client.logo}

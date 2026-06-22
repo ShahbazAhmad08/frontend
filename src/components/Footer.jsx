@@ -40,8 +40,8 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
-          {/* Brand Engine block */}
-          <div className="lg:col-span-5 max-w-sm">
+          {/* 1. BRAND ENGINE BLOCK (STAYS LEFT) */}
+          <div className="lg:col-span-4 max-w-sm">
             <Link to="/" className="flex items-center gap-2 group">
               <img
                 src="/logo.png"
@@ -72,8 +72,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links System Module */}
-          <div className="lg:col-span-2 lg:col-start-7">
+          {/* 2. CORE SPECIALIZATIONS (SHIFTED LEFT-CENTER) */}
+          <div className="lg:col-span-2 lg:col-start-6">
             <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
               Core Specializations
             </h4>
@@ -105,6 +105,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* 3. INTERNAL NODE (SHIFTED RIGHT-CENTER) */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
               Internal Node
@@ -127,7 +128,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
+          {/* 4. SECURE COMMUNICATIONS + MAP (NOW ON FAR RIGHT SIDE) */}
+          <div className="lg:col-span-3 lg:col-start-10">
             <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
               Secure Communications
             </h4>
@@ -155,14 +157,27 @@ export default function Footer() {
               {/* Maps Location Anchor Trigger */}
               <li className="pt-2 border-t border-slate-900 mt-2">
                 <a
-                  href="https://maps.google.com/?q=Kammavari+Pete,+Bengaluru,+Karnataka"
+                  href="https://maps.google.com/?q=Kammavari+Pete,+Hoskote,+Karnataka+562114"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 hover:text-blue-500 transition-colors leading-relaxed"
                 >
                   <MapPin size={14} className="text-blue-500 mt-0.5 shrink-0" />
-                  <span>Kammavari Pete, Bengaluru, Karnataka</span>
+                  <span>Kammavari Pete, Hoskote, Karnataka 562114</span>
                 </a>
+              </li>
+
+              {/* Embedded Small Map Widget */}
+              <li className="pt-3">
+                <div className="w-full h-28 rounded-xl overflow-hidden border border-slate-800/80 bg-slate-900/40 relative group">
+                  <iframe
+                    title="Footer Location Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.253684177309!2d77.7955513!3d13.019478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0579910c1dbb%3A0x6bde9d3a8609b51!2sKammavari%20Pete%2C%20Hoskote%2C%20Karnataka%20562114!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                    className="w-full h-full border-0 grayscale invert opacity-40 group-hover:opacity-80 group-hover:grayscale-0 group-hover:invert-0 transition-all duration-500 pointer-events-none"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </li>
             </ul>
           </div>
@@ -178,7 +193,7 @@ export default function Footer() {
               to="/terms"
               className="hover:text-white flex items-center gap-0.5 transition-colors"
             >
-              <span>Terms & Conditions</span>
+              <span>Prime Terms & Conditions</span>
               <ArrowUpRight size={10} />
             </Link>
 
