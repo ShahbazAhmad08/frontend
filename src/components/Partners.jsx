@@ -20,7 +20,7 @@ export default function Partners() {
             {[...partners, ...partners].map((logo, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-48 h-24 flex items-center justify-center"
+                className="shrink-0 w-48 h-24 flex items-center justify-center"
               >
                 <img
                   src={logo}

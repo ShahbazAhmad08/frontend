@@ -10,7 +10,7 @@ const PortfolioProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`flex flex-col lg:flex-row ${isReverse ? "lg:flex-row-reverse" : ""} gap-10 lg:gap-14 items-center bg-slate-50/20 backdrop-blur-md border border-slate-200 rounded-[32px] p-6 lg:p-8 hover:border-slate-300 transition-all duration-300 shadow-xl group`}
+      className={`flex flex-col lg:flex-row ${isReverse ? "lg:flex-row-reverse" : ""} gap-10 lg:gap-14 items-center bg-slate-50/20 backdrop-blur-md border border-slate-200 rounded-4xl p-6 lg:p-8 hover:border-slate-300 transition-all duration-300 shadow-xl group`}
     >
       {/* Content Architecture */}
       <div className="w-full lg:w-[65%] flex flex-col justify-between h-full">

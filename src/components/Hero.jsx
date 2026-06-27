@@ -87,7 +87,7 @@ export default function PremiumHero() {
       <div className="absolute inset-0 grid-pattern-dark mask-radial-top opacity-25 pointer-events-none" />
 
       {/* Decorative Ambient Radial Glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
+      <div className="absolute top-0 right-1/4 w-125 h-125 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
@@ -114,7 +114,7 @@ export default function PremiumHero() {
               <br />
               Story Starts
               <br />
-              <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-700 bg-clip-text">
+              <span className="text-transparent bg-linear-to-r from-blue-600 via-indigo-600 to-indigo-700 bg-clip-text">
                 Now.
               </span>
             </motion.h1>
@@ -232,7 +232,7 @@ export default function PremiumHero() {
 
             {/* Premium Glass Dashboard Panel */}
             <div className="bg-transparent backdrop-blur-xl rounded-3xl shadow-lg p-6 lg:p-8 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-tr from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-2">

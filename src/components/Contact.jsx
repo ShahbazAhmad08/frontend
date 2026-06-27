@@ -22,7 +22,7 @@ const PremiumContact = () => {
   return (
     <section className="relative py-20 lg:py-36 bg-white text-black overflow-hidden w-full box-border">
       {/* Decorative High-End Core Lighting Orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 blur-[140px] rounded-full pointer-events-none mix-blend-screen" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 bg-linear-to-r from-blue-500/5 to-indigo-500/5 blur-[140px] rounded-full pointer-events-none mix-blend-screen" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full box-border">
         {/* STRUCTURAL HEADER WRAPPER */}
@@ -67,7 +67,7 @@ const PremiumContact = () => {
             >
               <div className={cardClass}>
                 {/* Subtle top ambient light line for the map card */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/10 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/10 to-transparent" />
 
                 <div className="p-2 sm:p-3">
                   <iframe

@@ -13,7 +13,7 @@ export default function PremiumLayout({ children }) {
     <div className="flex flex-col min-h-screen bg-white font-sans selection:bg-blue-500/20 selection:text-blue-400 antialiased">
       <Navbar />
 
-      <main className="flex-grow w-full relative z-10">
+      <main className="grow w-full relative z-10">
         {children || <Outlet />}
       </main>
 

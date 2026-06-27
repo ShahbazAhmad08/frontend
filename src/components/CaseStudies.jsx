@@ -32,7 +32,7 @@ export default function PremiumCaseStudies() {
   return (
     <section className="relative py-28 lg:py-36 bg-white text-black overflow-hidden">
       {/* Background Subtle Gradient Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-150 h-87.5 bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* HEADER BLOCK */}
@@ -68,11 +68,11 @@ export default function PremiumCaseStudies() {
               whileInView="visible"
               viewport={{ once: true, margin: "-40px" }}
               whileHover={{ y: -6 }}
-              className="group relative rounded-[24px] bg-slate-50/30 border border-slate-200 overflow-hidden hover:border-slate-300 transition-all duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.02)] flex flex-col h-full"
+              className="group relative rounded-3xl bg-slate-50/30 border border-slate-200 overflow-hidden hover:border-slate-300 transition-all duration-300 shadow-[0_20px_40px_rgba(0,0,0,0.02)] flex flex-col h-full"
             >
               {/* IMAGE WRAPPER WITH CINEMATIC HOVER */}
               <div className="relative h-64 overflow-hidden bg-white">
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60 z-10" />
+                <div className="absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent opacity-60 z-10" />
                 <img
                   src={project.image}
                   alt={project.title}
@@ -94,7 +94,7 @@ export default function PremiumCaseStudies() {
               </div>
 
               {/* CARD INTERIOR CONTENT */}
-              <div className="p-7 flex flex-col flex-grow justify-between">
+              <div className="p-7 flex flex-col grow justify-between">
                 <div>
                   <span className="text-[11px] font-semibold text-blue-600 uppercase tracking-widest block mb-1.5">
                     {project.category}

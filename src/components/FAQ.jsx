@@ -96,7 +96,7 @@ export default function FAQ() {
   return (
     <section className="relative py-28 lg:py-36 bg-white text-black overflow-hidden">
       {/* Background Micro Mask Layer */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/[0.02] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-125 h-125 bg-indigo-500/2 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* HEADER */}

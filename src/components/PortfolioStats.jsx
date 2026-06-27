@@ -31,7 +31,7 @@ export default function PremiumStats() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-gradient-to-b from-slate-50/40 to-transparent border border-slate-200 rounded-2xl p-6 lg:p-8 text-left hover:border-slate-300 transition-colors"
+              className="bg-linear-to-b from-slate-50/40 to-transparent border border-slate-200 rounded-2xl p-6 lg:p-8 text-left hover:border-slate-300 transition-colors"
             >
               <h3 className="text-4xl lg:text-5xl font-black text-black tracking-tight font-mono">
                 {item.value}

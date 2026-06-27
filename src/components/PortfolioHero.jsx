@@ -23,7 +23,7 @@ const PremiumPortfolioHero = () => {
     <section className="relative pt-36 lg:pt-48 pb-16 lg:pb-24 bg-white text-black overflow-hidden">
       {/* Decorative Minimal Grid & Glow Layout Backing */}
       <div className="absolute inset-0 grid-pattern-dark mask-radial-bottom opacity-20 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-75 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
         <motion.div
@@ -47,7 +47,7 @@ const PremiumPortfolioHero = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-[1.1]"
           >
             Helping Businesses Grow Through
-            <span className="block mt-2 text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-200 bg-clip-text">
+            <span className="block mt-2 text-transparent bg-linear-to-r from-blue-600 via-indigo-600 to-indigo-200 bg-clip-text">
               Digital Innovation.
             </span>
           </motion.h1>

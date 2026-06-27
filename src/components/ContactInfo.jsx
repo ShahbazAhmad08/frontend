@@ -19,7 +19,7 @@ const ContactInfo = ({ cardClass, fadeUp }) => {
 
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-black mt-1.5 leading-tight">
           Partner with Us for{" "}
-          <span className="text-transparent bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text">
+          <span className="text-transparent bg-linear-to-r from-blue-600 to-indigo-500 bg-clip-text">
             Digital Growth
           </span>
         </h2>

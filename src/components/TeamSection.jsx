@@ -14,7 +14,7 @@ export default function TeamSection() {
       role: "Co-Founder & CTO",
       desc: "Skilled full-stack engineer driving innovation by architecting secure, high-performance web applications and integrating advanced technologies across diverse industries.",
       stack: ["AWS", "MERN Stack", "Scalable Architecture"],
-      image: "/team/co-founder.webp",
+      image: "/team/co-founder.jpeg",
     },
   ];
 
@@ -23,7 +23,7 @@ export default function TeamSection() {
       name: "Ayaz Khan",
       role: "Developer Team Lead",
       stack: ["AWS", "MERN Stack", "Scalable Architecture"],
-      image: "/team/co-founder.webp",
+      image: "/team/co-founder.jpeg",
     },
     {
       name: "Ashina Afsha",

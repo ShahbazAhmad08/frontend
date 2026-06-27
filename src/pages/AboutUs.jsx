@@ -8,8 +8,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import Contact from "../components/Contact";
-import CoreEngineering from "../components/CoreEngineering";
 import Partners from "../components/Partners";
+import TeamSection from "../components/TeamSection";
 
 const premiumFadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -300,7 +300,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <CoreEngineering />
+      <TeamSection />
       {/* Renders your high-fidelity premium contact systems directly down-fold */}
       <Contact />
     </div>
